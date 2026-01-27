@@ -1,9 +1,4 @@
 {
-  "projects": [
-    {
-      "name": "platform",
-      "rootDirectory": "apps/web",
-      "framework": "nextjs"
-    }
-  ]
+    "rootDirectory": "apps/web",
+    "framework": "nextjs"
 }
