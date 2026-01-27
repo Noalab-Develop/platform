@@ -1,150 +1,166 @@
+// apps/web/app/page.tsx
+import Image from "next/image";
+
+export const metadata = {
+  title: "noAlab | Consultoria em Engenharia de Software",
+  description:
+    "Consultoria em engenharia de software focada em sistemas escaláveis, integrações e segurança da informação.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100">
-      {/* HERO */}
-      <section className="mx-auto max-w-6xl px-6 py-28">
-        <span className="inline-block rounded-full bg-blue-500/10 px-4 py-1 text-sm text-blue-400">
-          Noalab • Consultoria em Tecnologia
-        </span>
+    <main className="min-h-screen bg-[#3E4A52] text-white">
+      {/* Header */}
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Logo noAlab"
+            width={40}
+            height={40}
+            priority
+          />
+          <span className="text-lg font-semibold">noAlab</span>
+        </div>
+        <nav className="hidden gap-8 text-sm text-[#D9DEE2] md:flex">
+          <a href="#servicos" className="hover:text-white">
+            Serviços
+          </a>
+          <a href="#abordagem" className="hover:text-white">
+            Abordagem
+          </a>
+          <a href="#contato" className="hover:text-white">
+            Contato
+          </a>
+        </nav>
+      </header>
 
-        <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl">
-          Engenharia de software <br />
-          <span className="text-blue-500">confiável e escalável</span>
+      {/* Hero */}
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+          Consultoria em engenharia de software para sistemas escaláveis e
+          seguros.
         </h1>
-
-        <p className="mt-6 max-w-2xl text-lg text-neutral-400">
-          A Noalab é uma consultoria em tecnologia focada em engenharia de
-          software, desenvolvimento de sistemas, integrações e segurança da
-          informação — ajudando empresas a construir soluções sólidas desde o
-          início.
+        <p className="mt-6 max-w-2xl text-lg text-[#D9DEE2]">
+          Arquitetura, desenvolvimento, integrações e segurança pensados para
+          startups e empresas em crescimento.
         </p>
-
-        <div className="mt-10 flex gap-4">
+        <div className="mt-10">
           <a
             href="#contato"
-            className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-500 transition"
+            className="inline-block rounded-md bg-[#4F6D7A] px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
           >
             Solicitar diagnóstico técnico
           </a>
-          <a
-            href="#servicos"
-            className="rounded-lg border border-neutral-800 px-6 py-3 font-medium text-neutral-300 hover:border-neutral-700 transition"
-          >
-            Nossos serviços
-          </a>
         </div>
       </section>
 
-      {/* SERVIÇOS */}
+      {/* Serviços */}
       <section
         id="servicos"
-        className="border-t border-neutral-900 bg-neutral-900/40"
+        className="bg-white px-6 py-24 text-[#1F2A30]"
       >
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-7xl">
           <h2 className="text-3xl font-semibold">Serviços</h2>
-          <p className="mt-3 max-w-xl text-neutral-400">
-            Atuação técnica, pragmática e orientada a resultado.
-          </p>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Engenharia de Software",
-                desc: "APIs, backend, arquitetura de sistemas, performance e escalabilidade."
-              },
-              {
-                title: "Integrações de Sistemas",
-                desc: "APIs, webhooks, filas, pipelines de dados e serviços terceiros."
-              },
-              {
-                title: "Cloud & DevOps",
-                desc: "CI/CD, infraestrutura como código, arquitetura em nuvem e otimização de custos."
-              },
-              {
-                title: "Segurança da Informação",
-                desc: "Autenticação, autorização, segurança de APIs e práticas secure-by-design."
-              }
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl border border-neutral-800 bg-neutral-950 p-6"
-              >
-                <h3 className="text-lg font-medium">{item.title}</h3>
-                <p className="mt-3 text-sm text-neutral-400">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            <ServiceCard
+              title="Engenharia de Software"
+              description="Desenho de sistemas, APIs, backend e frontend com foco em performance, manutenibilidade e escala."
+            />
+            <ServiceCard
+              title="Integrações"
+              description="Integração entre sistemas via APIs, webhooks, filas e pipelines de dados."
+            />
+            <ServiceCard
+              title="Segurança da Informação"
+              description="Autenticação, autorização, arquitetura segura e boas práticas desde o início."
+            />
           </div>
         </div>
       </section>
 
-      {/* DIFERENCIAIS */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-semibold">Por que a Noalab</h2>
-
-        <div className="mt-10 grid gap-8 sm:grid-cols-2">
-          <div>
-            <h3 className="text-xl font-medium">Atuação sênior</h3>
-            <p className="mt-3 text-neutral-400">
-              Trabalho direto com engenheiros experientes, sem camadas
-              desnecessárias ou repasses de responsabilidade.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-medium">Segurança desde a base</h3>
-            <p className="mt-3 text-neutral-400">
-              Segurança integrada à arquitetura, pipelines e código — não como
-              correção tardia.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-medium">Mentalidade de startup</h3>
-            <p className="mt-3 text-neutral-400">
-              Decisões técnicas focadas em baixo custo, velocidade e evolução
-              contínua do produto.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-medium">Base para escalar</h3>
-            <p className="mt-3 text-neutral-400">
-              Sistemas pensados para crescer do MVP à escala produtiva sem
-              retrabalho.
-            </p>
-          </div>
+      {/* Abordagem */}
+      <section
+        id="abordagem"
+        className="mx-auto max-w-7xl px-6 py-24"
+      >
+        <h2 className="text-3xl font-semibold">Abordagem</h2>
+        <div className="mt-12 grid gap-8 md:grid-cols-3 text-[#D9DEE2]">
+          <ApproachItem
+            title="Baixo custo"
+            description="Escolhas tecnológicas orientadas à eficiência e otimização de custos."
+          />
+          <ApproachItem
+            title="Escalável"
+            description="Arquiteturas preparadas para crescer junto com o negócio."
+          />
+          <ApproachItem
+            title="Seguro por padrão"
+            description="Segurança integrada desde as primeiras decisões técnicas."
+          />
         </div>
       </section>
 
-      {/* CONTATO */}
+      {/* CTA */}
       <section
         id="contato"
-        className="border-t border-neutral-900 bg-neutral-900/40"
+        className="bg-[#1F2A30] px-6 py-24"
       >
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="text-3xl font-semibold">Contato</h2>
-          <p className="mt-3 max-w-xl text-neutral-400">
-            Precisa de apoio técnico ou quer evoluir sua arquitetura com
-            segurança? Vamos conversar.
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold">
+            Vamos construir algo sólido.
+          </h2>
+          <p className="mt-4 text-[#D9DEE2]">
+            Comece com um diagnóstico técnico e um roadmap claro.
           </p>
-
           <div className="mt-8">
             <a
-              href="mailto:contato@noalab.tech"
-              className="inline-block rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-500 transition"
+              href="mailto:contato@noalab.com"
+              className="inline-block rounded-md bg-[#4F6D7A] px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
             >
-              contato@noalab.tech
+              Entrar em contato
             </a>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-neutral-900">
-        <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-neutral-500">
-          © {new Date().getFullYear()} Noalab • Consultoria em Tecnologia
-        </div>
+      {/* Footer */}
+      <footer className="bg-[#3E4A52] px-6 py-8 text-center text-sm text-[#D9DEE2]">
+        © {new Date().getFullYear()} noAlab. Todos os direitos reservados.
       </footer>
     </main>
+  );
+}
+
+function ServiceCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-lg border border-[#D9DEE2] p-6">
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="mt-4 text-sm text-[#3E4A52]">{description}</p>
+    </div>
+  );
+}
+
+function ApproachItem({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div>
+      <h3 className="text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-3 text-sm">{description}</p>
+    </div>
   );
 }
