@@ -2,9 +2,9 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "noAlab | CTO as a Service",
+  title: "noAlab | CTO as a Service – Engenharia, Segurança, Integrações",
   description:
-    "CTO as a Service focado em engenharia de software, arquitetura, integrações e segurança da informação.",
+    "CTO as a Service para acelerar sua tecnologia, com expertise em engenharia de software, segurança, integrações e arquitetura.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -29,8 +29,8 @@ export default function Home() {
           <a href="#servicos" className="hover:text-white">
             Serviços
           </a>
-          <a href="#como-funciona" className="hover:text-white">
-            Como funciona
+          <a href="#beneficios" className="hover:text-white">
+            Benefícios
           </a>
           <a href="#contato" className="hover:text-white">
             Contato
@@ -41,19 +41,18 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 py-28">
         <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
-          CTO as a Service para estruturar, escalar e proteger seu produto.
+          CTO as a Service para você acelerar tecnologia, reduzir riscos e aumentar resultados.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-gray-300">
-          Apoio técnico estratégico em engenharia de software, arquitetura,
-          integrações e segurança, pensado para startups e empresas em
-          crescimento.
+          Obtenha liderança técnica experiente sob demanda, sem o custo de um executivo em tempo integral. 
+          Estratégias claras em engenharia, arquitetura de software, integrações e segurança da informação.
         </p>
         <div className="mt-10">
           <a
             href="#contato"
             className="inline-block rounded-md bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white hover:bg-[#38BDF8]"
           >
-            Solicitar diagnóstico técnico
+            Solicitar avaliação técnica gratuita
           </a>
         </div>
       </section>
@@ -64,48 +63,43 @@ export default function Home() {
         className="bg-[#F9FAFB] px-6 py-24 text-[#111827]"
       >
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold">O que eu faço como CTO</h2>
+          <h2 className="text-3xl font-semibold">O que fazemos</h2>
+          <p className="mt-4 text-gray-600">
+            Como seu CTO as a Service, entregamos expertise em tecnologia que normalmente só se encontra em cargos executivos seniores:
+          </p>
           <div className="mt-12 grid gap-8 md:grid-cols-4">
             <ServiceCard
               title="Engenharia de Software"
-              description="Definição de padrões, revisão de código, decisões técnicas e apoio no desenvolvimento de sistemas confiáveis e escaláveis."
+              description="Revisão de arquitetura, qualidade de código, padrões e decisões técnicas que impulsionam produtos confiáveis."
             />
             <ServiceCard
               title="Arquitetura de Software"
-              description="Desenho de arquiteturas modernas, escaláveis e com baixo custo operacional desde o início."
+              description="Desenho de sistemas escaláveis e modularizados, reduzindo riscos e acelerando entregas."
             />
             <ServiceCard
               title="Integrações entre Sistemas"
-              description="APIs, webhooks, filas e pipelines de dados garantindo comunicação segura e resiliente entre plataformas."
+              description="Conectividade robusta de APIs, pipelines de dados e automações que mantêm seus sistemas em harmonia."
             />
             <ServiceCard
               title="Segurança da Informação"
-              description="Autenticação, autorização, proteção de dados e boas práticas de segurança aplicadas à realidade do negócio."
+              description="Proteção de dados, autenticação forte, autorização e políticas de segurança alinhadas a normas de mercado."
             />
           </div>
         </div>
       </section>
 
-      {/* Como funciona */}
+      {/* Benefícios */}
       <section
-        id="como-funciona"
+        id="beneficios"
         className="mx-auto max-w-7xl px-6 py-24"
       >
-        <h2 className="text-3xl font-semibold">Como funciona</h2>
-        <div className="mt-12 grid gap-8 md:grid-cols-3 text-gray-300">
-          <Step
-            title="Diagnóstico técnico"
-            description="Análise da arquitetura, código, infraestrutura e processos atuais."
-          />
-          <Step
-            title="Roadmap claro"
-            description="Plano de evolução técnica alinhado aos objetivos do negócio."
-          />
-          <Step
-            title="Acompanhamento contínuo"
-            description="Atuação recorrente como CTO, apoiando decisões e execução técnica."
-          />
-        </div>
+        <h2 className="text-3xl font-semibold text-white">Por que escolher noAlab</h2>
+        <ul className="mt-8 space-y-4 text-gray-300">
+          <li>• Acesso imediato a liderança técnica sem custo de contratação full-time.</li>
+          <li>• Decisões estratégicas que reduzem dívidas técnicas e aceleram o roadmap.</li>
+          <li>• Expertise prática em soluções que já escalaram em múltiplos setores.</li>
+          <li>• Foco em resultados: mais previsibilidade, menos retrabalho e entregas seguras.</li>
+        </ul>
       </section>
 
       {/* CTA */}
@@ -115,17 +109,17 @@ export default function Home() {
       >
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold">
-            Estruture sua tecnologia do jeito certo.
+            Pronto para transformar sua tecnologia?
           </h2>
           <p className="mt-4 text-gray-400">
-            Comece com um diagnóstico técnico e evite decisões caras no futuro.
+            Vamos começar com uma avaliação técnica gratuita para entender seus desafios e oportunidades.
           </p>
           <div className="mt-8">
             <a
               href="mailto:contato@noalab.com"
               className="inline-block rounded-md bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white hover:bg-[#38BDF8]"
             >
-              Entrar em contato
+              Solicitar avaliação
             </a>
           </div>
         </div>
@@ -150,21 +144,6 @@ function ServiceCard({
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-4 text-sm text-gray-600">{description}</p>
-    </div>
-  );
-}
-
-function Step({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <div>
-      <h3 className="text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-3 text-sm">{description}</p>
     </div>
   );
 }
