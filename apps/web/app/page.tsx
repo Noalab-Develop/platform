@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* Blue Strip */}
-      <section className="bg-[#1F4FD8] py-10">
+      <section className="bg-[#0A2540] py-10">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium">
           Liderança técnica estratégica para decisões críticas em produto,
           arquitetura e segurança.
