@@ -8,7 +8,7 @@ const WEATHER_SEQUENCE = [
   "rain",
   "sunrise",
   "sunset",
-  "night",
+  "night"
 ] as const;
 
 type WeatherType = typeof WEATHER_SEQUENCE[number];

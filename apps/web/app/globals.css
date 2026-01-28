@@ -3,9 +3,9 @@
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
 
-/* ===============================
+/* ===================================================
    Design tokens
-================================ */
+=================================================== */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -15,9 +15,9 @@
   --font-heading: var(--font-sora);
 }
 
-/* ===============================
+/* ===================================================
    Dark mode
-================================ */
+=================================================== */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a2540;
@@ -25,9 +25,9 @@
   }
 }
 
-/* ===============================
+/* ===================================================
    Base styles
-================================ */
+=================================================== */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -46,7 +46,7 @@ header {
 }
 
 /* ===================================================
-   🍎 APPLE WEATHER–LEVEL HERO
+   🍎 APPLE WEATHER–LEVEL HERO (FINAL)
 =================================================== */
 
 .hero {
@@ -57,11 +57,15 @@ header {
 }
 
 @media (min-width: 640px) {
-  .hero { height: 360px; }
+  .hero {
+    height: 360px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .hero { height: 500px; }
+  .hero {
+    height: 500px;
+  }
 }
 
 /* ================= SKY ================= */
@@ -69,17 +73,72 @@ header {
 .hero-sky {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  transition: background 1.8s ease;
+}
+
+/* ================= WEATHER STATES ================= */
+
+/* ☀️ CLEAR */
+.hero-clear .hero-sky {
   background: linear-gradient(
     to bottom,
     #4facfe,
     #00c6fb 40%,
     #0a2540 100%
   );
-  z-index: 1;
-  transition: background 1.8s ease;
 }
 
-/* ================= SUN ================= */
+/* ☁️ CLOUDS */
+.hero-clouds .hero-sky {
+  background: linear-gradient(
+    to bottom,
+    #94a3b8,
+    #64748b 45%,
+    #1e293b 100%
+  );
+}
+
+/* 🌧️ RAIN */
+.hero-rain .hero-sky {
+  background: linear-gradient(
+    to bottom,
+    #0f172a,
+    #020617 60%,
+    #020617 100%
+  );
+}
+
+/* 🌅 SUNRISE */
+.hero-sunrise .hero-sky {
+  background: linear-gradient(
+    to bottom,
+    #fb923c,
+    #fda4af 45%,
+    #0a2540 100%
+  );
+}
+
+/* 🌇 SUNSET */
+.hero-sunset .hero-sky {
+  background: linear-gradient(
+    to bottom,
+    #f59e0b,
+    #fb7185 45%,
+    #0a2540 100%
+  );
+}
+
+/* 🌙 NIGHT */
+.hero-night .hero-sky {
+  background: linear-gradient(
+    to bottom,
+    #020617,
+    #020617
+  );
+}
+
+/* ================= SUN (Clear / Sunrise / Sunset) ================= */
 
 .hero-clear .hero-sky::before,
 .hero-sunrise .hero-sky::before,
@@ -93,92 +152,68 @@ header {
   transform: translateX(-50%);
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.6),
-    rgba(255,255,255,0.25),
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.25),
     transparent 70%
   );
   filter: blur(45px);
   animation: sunPulse 6s ease-in-out infinite;
 }
 
-/* ================= SUNRISE / SUNSET ================= */
+/* ================= STARS (Night) ================= */
 
-.hero-sunrise .hero-sky {
-  background: linear-gradient(
-    to bottom,
-    #fb923c,
-    #fda4af 45%,
-    #0a2540 100%
-  );
-}
-
-.hero-sunset .hero-sky {
-  background: linear-gradient(
-    to bottom,
-    #f59e0b,
-    #fb7185 45%,
-    #0a2540 100%
-  );
-}
-
-/* ================= NIGHT ================= */
-
-.hero-night .hero-sky {
-  background: linear-gradient(
-    to bottom,
-    #020617,
-    #020617
-  );
-}
-
-/* Stars */
 .hero-night .hero-sky::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(white 1px, transparent 1px);
+  background-image: radial-gradient(white 1px, transparent 1px);
   background-size: 120px 120px;
   opacity: 0.15;
 }
 
-/* ================= CLOUDS ================= */
+/* ================= CLOUD LAYERS ================= */
 
-.hero-clouds {
+.hero-clouds-layer {
   position: absolute;
   inset: -20%;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Cg fill='rgba(255,255,255,0.25)'%3E%3Cellipse cx='200' cy='200' rx='200' ry='80'/%3E%3Cellipse cx='500' cy='180' rx='260' ry='100'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 800px 400px;
   z-index: 2;
+  pointer-events: none;
 }
 
-.layer-1 {
+.clouds-slow {
   animation: cloudsSlow 160s linear infinite;
   opacity: 0.6;
 }
 
-.layer-2 {
+.clouds-fast {
   animation: cloudsFast 90s linear infinite;
   opacity: 0.4;
 }
 
-/* ================= RAIN ================= */
+/* ================= EFFECTS LAYER ================= */
 
-.hero-rain .hero-effects {
+.hero-effects {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* 🌧️ Rain effect */
+.hero-rain .hero-effects {
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(255,255,255,0.25),
-    rgba(255,255,255,0.25) 1px,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 1px,
     transparent 1px,
     transparent 14px
   );
   animation: rainFall 0.6s linear infinite;
-  z-index: 3;
 }
 
-/* Lightning */
+/* ⚡ Lightning */
 .hero-rain .hero-sky {
   animation: lightning 18s infinite;
 }
@@ -190,8 +225,8 @@ header {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10,37,64,0.35),
-    rgba(10,37,64,0.75)
+    rgba(10, 37, 64, 0.35),
+    rgba(10, 37, 64, 0.75)
   );
   z-index: 4;
 }
@@ -226,33 +261,56 @@ header {
 /* ================= ANIMATIONS ================= */
 
 @keyframes sunPulse {
-  0%,100% { opacity: 0.9; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes cloudsSlow {
-  from { transform: translateX(-10%); }
-  to { transform: translateX(10%); }
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(10%);
+  }
 }
 
 @keyframes cloudsFast {
-  from { transform: translateX(10%); }
-  to { transform: translateX(-10%); }
+  from {
+    transform: translateX(10%);
+  }
+  to {
+    transform: translateX(-10%);
+  }
 }
 
 @keyframes rainFall {
-  from { background-position-y: 0; }
-  to { background-position-y: 100%; }
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 100%;
+  }
 }
 
 @keyframes lightning {
-  0%, 96%, 100% { filter: brightness(1); }
-  97% { filter: brightness(1.6); }
+  0%,
+  96%,
+  100% {
+    filter: brightness(1);
+  }
+  97% {
+    filter: brightness(1.6);
+  }
 }
 
-/* ===============================
-   Swiper FIXES (OBRIGATÓRIO)
-================================ */
+/* ===================================================
+   Swiper FIXES
+=================================================== */
 
 .swiper {
   overflow: visible;
