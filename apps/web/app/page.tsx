@@ -6,7 +6,7 @@ export const metadata = {
   description:
     "CTO as a Service para acelerar sua tecnologia com engenharia de software, arquitetura, integrações e segurança da informação.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
@@ -20,9 +20,14 @@ export default function Home() {
 
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center font-bold text-white">
-              N
-            </div>
+              <Image
+                src="/logo.png"
+                alt="Noalab"
+                width={36}
+                height={36}
+                className="rounded-lg"
+                priority
+              />
 
             <div className="leading-tight">
               <span className="block font-[var(--font-sora)] text-lg font-semibold text-white">
