@@ -54,17 +54,17 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero / Live Ocean Banner */}
+      {/* Hero / Ocean Live Banner */}
       <section className="relative w-full overflow-hidden">
         <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[500px]">
                 
-          {/* Ocean background */}
-          <div className="absolute inset-0 ocean-bg" />
+          {/* Ocean texture animated */}
+          <div className="absolute inset-0 ocean-live-bg"></div>
                 
-          {/* Dark overlay (legibilidade) */}
-          <div className="absolute inset-0 bg-[#0A2540]/70" />
+          {/* Overlay para contraste */}
+          <div className="absolute inset-0 bg-[#0A2540]/75"></div>
                 
-          {/* Content (inalterado) */}
+          {/* Conteúdo */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
             <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
               Liderança técnica para decisões críticas em tecnologia
