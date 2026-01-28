@@ -21,10 +21,10 @@ export default function Home() {
           {/* Brand */}
           <div className="flex items-center gap-3">
               <Image
-                src="/logo-64.png"
+                src="/logo-128.png"
                 alt="Noalab"
-                width={64}
-                height={64}
+                width={128}
+                height={128}
                 className="rounded-lg"
                 priority
               />
