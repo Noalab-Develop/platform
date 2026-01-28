@@ -54,15 +54,15 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero / Live Banner */}
+      {/* Hero / Live Ocean Banner */}
       <section className="relative w-full overflow-hidden">
         <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[500px]">
                 
-          {/* Animated gradient background */}
-          <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-[#0A2540] via-[#1F4FD8] to-[#0A2540]" />
+          {/* Ocean background */}
+          <div className="absolute inset-0 ocean-bg" />
                 
-          {/* Overlay para contraste e sobriedade */}
-          <div className="absolute inset-0 bg-[#0A2540]/65" />
+          {/* Dark overlay (legibilidade) */}
+          <div className="absolute inset-0 bg-[#0A2540]/70" />
                 
           {/* Content (inalterado) */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
@@ -73,6 +73,7 @@ export default function Home() {
               Apoio estratégico para você acelerar seu negócio, reduzir riscos e aumentar resultados.
             </p>
           </div>
+                
         </div>
       </section>
 

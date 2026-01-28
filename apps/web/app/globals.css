@@ -105,3 +105,60 @@ header {
 .swiper-pagination {
   bottom: 0 !important;
 }
+
+/* ===============================
+   Ocean / Water Motion Banner
+================================ */
+
+/* Gradiente base do oceano */
+.ocean-bg {
+  background: linear-gradient(
+    120deg,
+    #041b2d,
+    #0a2540,
+    #1b3b6f,
+    #0a2540
+  );
+  background-size: 300% 300%;
+  animation: oceanGradient 18s ease-in-out infinite;
+}
+
+/* Camada de distorção suave */
+.ocean-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(56, 189, 248, 0.18),
+    transparent 60%
+  );
+  filter: blur(80px);
+  animation: oceanWaves 22s ease-in-out infinite;
+}
+
+/* Animação principal */
+@keyframes oceanGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Movimento orgânico tipo água */
+@keyframes oceanWaves {
+  0% {
+    transform: translateX(-5%) translateY(-5%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(5%) translateY(5%) rotate(1deg);
+  }
+  100% {
+    transform: translateX(-5%) translateY(-5%) rotate(0deg);
+  }
+}
