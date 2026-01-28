@@ -54,19 +54,17 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero / Banner */}
+      {/* Hero / Live Banner */}
       <section className="relative w-full overflow-hidden">
         <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[500px]">
-          <Image
-            src="/hero-banner.jpg"
-            alt="Tecnologia, IA e liderança técnica"
-            fill
-            className="object-cover"
-            priority
-            unoptimized
-          />
-          <div className="absolute inset-0 bg-black/60" />
-
+                
+          {/* Animated gradient background */}
+          <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-[#0A2540] via-[#1F4FD8] to-[#0A2540]" />
+                
+          {/* Overlay para contraste e sobriedade */}
+          <div className="absolute inset-0 bg-[#0A2540]/65" />
+                
+          {/* Content (inalterado) */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
             <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
               Liderança técnica para decisões críticas em tecnologia

@@ -46,12 +46,33 @@ header {
 }
 
 /* ===============================
+   Live Gradient Banner
+================================ */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+  background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 16s ease infinite;
+}
+
+/* ===============================
    Swiper FIXES (OBRIGATÓRIO)
 ================================ */
 
 /* Evita vazamento de layout */
 .swiper {
   overflow: visible;
+  padding-bottom: 3rem; /* espaço para paginação */
 }
 
 /* Mantém altura consistente */
@@ -83,9 +104,4 @@ header {
 /* Pagination (bolinhas) */
 .swiper-pagination {
   bottom: 0 !important;
-}
-
-/* Espaçamento extra abaixo do carousel */
-.swiper {
-  padding-bottom: 3rem;
 }
