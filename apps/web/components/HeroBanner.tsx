@@ -7,13 +7,19 @@ export function HeroBanner() {
 
   return (
     <section className={`hero hero-${weather}`}>
+      <div className="hero-sky" />
+      <div className="hero-clouds layer-1" />
+      <div className="hero-clouds layer-2" />
+      <div className="hero-effects" />
+
       <div className="hero-overlay" />
+
       <div className="hero-content">
         <h1 className="hero-title">
           Liderança técnica para decisões críticas em tecnologia
         </h1>
         <p className="hero-subtitle">
-          Apoio estratégico para você acelerar seu negócio, reduzir riscos e aumentar resultados.
+          Apoio estratégico para acelerar negócios, reduzir riscos e escalar com segurança.
         </p>
       </div>
     </section>
