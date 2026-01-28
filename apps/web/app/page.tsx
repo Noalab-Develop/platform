@@ -36,7 +36,7 @@ export default function Home() {
 
           {/* Nav */}
           <nav className="hidden items-center gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
-            {["servicos", "beneficios", "contato"].map((item) => (
+            {["serviços", "beneficios", "contato"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* Serviços */}
-      <section id="servicos" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="serviços" className="mx-auto max-w-7xl px-6 py-20">
         <div className="rounded-2xl bg-[#F9FAFB] px-8 py-14 shadow-lg">
           <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-center text-[#111827]">
             O que fazemos
