@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-28 md:grid-cols-2">
-        <div>
+        <div className="z-10">
           <h1 className="text-4xl font-bold leading-tight md:text-5xl">
             CTO as a Service para estruturar, escalar e proteger sua tecnologia.
           </h1>
@@ -46,15 +46,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="relative h-[320px] w-full md:h-[420px]">
+        {/* Hero Image + Overlay */}
+        <div className="relative h-[320px] w-full overflow-hidden rounded-lg md:h-[420px]">
           <Image
             src="/hero-tech.jpg"
             alt="Tecnologia e engenharia de software"
             fill
-            className="rounded-lg object-cover"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
       </section>
 
@@ -71,30 +72,33 @@ export default function Home() {
             <ServiceCard
               title="Engenharia de Software"
               description="Padrões, revisão de código e direcionamento técnico."
-              image="/services/engineering.png"
+              image="/services/engineering.jpg"
             />
             <ServiceCard
               title="Arquitetura de Software"
               description="Sistemas escaláveis, resilientes e de baixo custo."
-              image="/services/architecture.png"
+              image="/services/architecture.jpg"
             />
             <ServiceCard
               title="Integrações"
               description="APIs, webhooks, filas e pipelines de dados."
-              image="/services/integrations.png"
+              image="/services/integrations.jpg"
             />
             <ServiceCard
               title="Segurança da Informação"
               description="Autenticação, autorização e proteção de dados."
-              image="/services/security.png"
+              image="/services/security.jpg"
             />
           </div>
         </div>
       </section>
 
       {/* Benefícios */}
-      <section id="beneficios" className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-24 md:grid-cols-2">
-        <div>
+      <section
+        id="beneficios"
+        className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-24 md:grid-cols-2"
+      >
+        <div className="z-10">
           <h2 className="text-3xl font-semibold">Por que escolher a Noalab</h2>
           <ul className="mt-8 space-y-4 text-gray-300">
             <li>• Liderança técnica sem custo de CTO full-time</li>
@@ -104,14 +108,15 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* Benefits Image */}
-        <div className="relative h-[320px] w-full">
+        {/* Benefits Image + Overlay */}
+        <div className="relative h-[320px] w-full overflow-hidden rounded-lg">
           <Image
             src="/benefits.jpg"
             alt="Consultoria técnica e tomada de decisão"
             fill
-            className="rounded-lg object-cover"
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
       </section>
 
@@ -154,8 +159,9 @@ function ServiceCard({
 }) {
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-      <div className="relative mb-4 h-12 w-12">
-        <Image src={image} alt={title} fill className="object-contain" />
+      <div className="relative mb-4 h-14 w-14 overflow-hidden rounded-md">
+        <Image src={image} alt={title} fill className="object-cover" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-3 text-sm text-gray-600">{description}</p>
