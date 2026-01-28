@@ -36,7 +36,7 @@ export default function Home() {
 
           {/* Nav */}
           <nav className="hidden items-center gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
-            {["serviços", "beneficios", "contato"].map((item) => (
+            {["serviços", "benefícios", "contato"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
@@ -97,11 +97,11 @@ export default function Home() {
       </section>
 
       {/* Benefícios */}
-      <section id="beneficios" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="benefícios" className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
             <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-white">
-              Por que escolher a Noalab
+              Por que contratar a Noalab
             </h2>
             <ul className="mt-6 space-y-3 text-gray-300">
               <li>• Liderança técnica sem custo de CTO full-time</li>
