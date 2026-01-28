@@ -64,7 +64,7 @@ export default function Home() {
 
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
             <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
-              Liderança técnica para decisões críticas em tecnologia
+              Liderança técnica para você acelerar tecnologia, reduzir riscos e aumentar resultados.
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-gray-200">
               Apoio estratégico em engenharia, arquitetura e segurança desde o início.
@@ -76,7 +76,8 @@ export default function Home() {
       {/* Blue Highlight Strip */}
       <section className="bg-[#0A2540] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
-          Decisões técnicas sólidas hoje evitam custos exponenciais amanhã.
+          `Obtenha liderança técnica experiente sob demanda, sem custo de um executivo em tempo integral.
+          Estratégias claras em engenharia, arquitetura de software, integrações e segurança da Informação.`
         </p>
       </section>
 
