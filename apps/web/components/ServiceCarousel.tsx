@@ -10,23 +10,27 @@ import "swiper/css/navigation";
 
 export function ServicesCarousel() {
   return (
-    <Swiper
-      modules={[Pagination, Navigation]}
-      spaceBetween={24}
-      slidesPerView={1}
-      pagination={{ clickable: true }}
-      navigation
-      breakpoints={{
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      }}
-    >
-      {services.map((service) => (
-        <SwiperSlide key={service.title}>
-          <CardLarge {...service} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="relative w-full">
+      <Swiper
+        modules={[Pagination, Navigation]}
+        spaceBetween={24}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        navigation
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        className="!overflow-visible"
+      >
+        {services.map((service) => (
+          <SwiperSlide key={service.title} className="h-auto">
+            <CardLarge {...service} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }
 
@@ -63,8 +67,10 @@ function CardLarge({
   image: string;
 }) {
   return (
-    <div className="rounded-lg bg-white shadow-lg overflow-hidden text-[#111827]">
-      <div className="relative h-56 w-full">
+    <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-lg text-[#111827]">
+      
+      {/* Image */}
+      <div className="relative h-56 w-full shrink-0">
         <Image
           src={image}
           alt={title}
@@ -73,9 +79,13 @@ function CardLarge({
           unoptimized
         />
       </div>
-      <div className="p-6">
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="mt-2 text-sm text-gray-700">{description}</p>
+        <p className="mt-2 text-sm text-gray-700">
+          {description}
+        </p>
       </div>
     </div>
   );

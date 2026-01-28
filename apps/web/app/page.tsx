@@ -15,16 +15,27 @@ export default function Home() {
     <main className="min-h-screen bg-[#0A2540] text-white">
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#0A2540]/90 backdrop-blur-md border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-[#0A2540]/80 backdrop-blur-md border-b border-white/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <span className="font-[var(--font-sora)] text-xl font-semibold tracking-wide text-white">
-            Noalab
-            <span className="ml-2 text-sm font-medium tracking-wider text-blue-400">
-              Tech Consulting
-            </span>
-          </span>
-
-          <nav className="hidden gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
+          
+          {/* Brand */}
+          <div className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center font-bold text-white">
+              N
+            </div>
+        
+            <div className="leading-tight">
+              <span className="block font-[var(--font-sora)] text-lg font-semibold text-white">
+                Noalab
+              </span>
+              <span className="block text-xs tracking-wide text-blue-400">
+                CTO as a Service
+              </span>
+            </div>
+          </div>
+        
+          {/* Nav */}
+          <nav className="hidden items-center gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
             {["servicos", "beneficios", "contato"].map((item) => (
               <a
                 key={item}
