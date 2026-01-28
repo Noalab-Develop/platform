@@ -66,10 +66,7 @@ header {
   }
 }
 
-/* ================= IMAGE BASE ================= */
-/* A imagem vem do Next/Image (z-0) */
-
-/* ================= SKY BLEND LAYER ================= */
+/* ================= SKY BLEND ================= */
 
 .hero-sky {
   position: absolute;
@@ -201,18 +198,25 @@ header {
   pointer-events: none;
 }
 
-/* 🌧️ RAIN (VERTICAL CORRECT) */
+/* 🌧️ RAIN — REAL DROPS (NO LINES) */
 .hero-rain .hero-effects {
-  background-image: repeating-linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0.35),
-    rgba(255, 255, 255, 0.35) 1px,
-    transparent 1px,
-    transparent 18px
-  );
-  background-size: 2px 22px;
-  animation: rainFall 0.45s linear infinite;
-  opacity: 0.75;
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,0.35) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      rgba(255,255,255,0.25) 1px,
+      transparent 2px
+    );
+  background-size:
+    12px 22px,
+    18px 28px;
+  background-position:
+    0 -20%,
+    6px -30%;
+  animation: rainDrop 0.8s linear infinite;
+  opacity: 0.85;
 }
 
 /* ================= OVERLAY ================= */
@@ -258,20 +262,13 @@ header {
 /* ================= ANIMATIONS ================= */
 
 @keyframes skyDrift {
-  0% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
 }
 
 @keyframes sunFloat {
-  0%,
-  100% {
+  0%,100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
@@ -280,20 +277,20 @@ header {
 }
 
 @keyframes cloudsDrift {
-  from {
-    transform: translateX(-10%);
-  }
-  to {
-    transform: translateX(10%);
-  }
+  from { transform: translateX(-10%); }
+  to { transform: translateX(10%); }
 }
 
-@keyframes rainFall {
+@keyframes rainDrop {
   0% {
-    background-position: 0 0;
+    background-position:
+      0 -20%,
+      6px -30%;
   }
   100% {
-    background-position: 0 120%;
+    background-position:
+      0 120%,
+      6px 130%;
   }
 }
 
@@ -322,13 +319,8 @@ header {
   height: 36px;
 }
 
-.swiper-button-next {
-  right: -6px;
-}
-
-.swiper-button-prev {
-  left: -6px;
-}
+.swiper-button-next { right: -6px; }
+.swiper-button-prev { left: -6px; }
 
 .swiper-pagination {
   bottom: 0 !important;
