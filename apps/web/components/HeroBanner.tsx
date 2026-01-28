@@ -8,7 +8,6 @@ export function HeroBanner() {
   return (
     <section className={`hero hero-${weather}`}>
       <div className="hero-overlay" />
-
       <div className="hero-content">
         <h1 className="hero-title">
           Liderança técnica para decisões críticas em tecnologia
