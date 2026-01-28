@@ -1,4 +1,3 @@
-// apps/web/app/page.tsx
 import Image from "next/image";
 
 export const metadata = {
@@ -46,8 +45,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero Image + Overlay */}
-        <div className="relative h-[320px] w-full overflow-hidden rounded-lg md:h-[420px]">
+        {/* Hero Image + Overlay (desktop only) */}
+        <div className="relative hidden h-[420px] w-full overflow-hidden rounded-lg md:block">
           <Image
             src="/hero-tech.jpg"
             alt="Tecnologia e engenharia de software"
@@ -108,8 +107,8 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* Benefits Image + Overlay */}
-        <div className="relative h-[320px] w-full overflow-hidden rounded-lg">
+        {/* Benefits Image + Overlay (desktop only) */}
+        <div className="relative hidden h-[320px] w-full overflow-hidden rounded-lg md:block">
           <Image
             src="/benefits.jpg"
             alt="Consultoria técnica e tomada de decisão"
