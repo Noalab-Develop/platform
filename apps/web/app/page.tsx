@@ -13,6 +13,18 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0A2540] text-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-[#0A2540]/90 backdrop-blur border-b border-white/10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <span className="text-lg font-semibold">Noalab</span>
+          <nav className="hidden gap-8 text-sm text-gray-300 md:flex">
+            <a href="#servicos" className="hover:text-white">Serviços</a>
+            <a href="#beneficios" className="hover:text-white">Benefícios</a>
+            <a href="#contato" className="hover:text-white">Contato</a>
+          </nav>
+        </div>
+      </header>
+
       {/* Banner Top */}
       <section className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full">
         <Image
@@ -31,6 +43,14 @@ export default function Home() {
             Acelere sua Engenharia, Integrações e Segurança com liderança técnica sob demanda.
           </p>
         </div>
+      </section>
+
+      {/* Blue Strip */}
+      <section className="bg-[#1F4FD8] py-10">
+        <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium">
+          Liderança técnica estratégica para decisões críticas em produto,
+          arquitetura e segurança.
+        </p>
       </section>
 
       {/* Serviços */}
