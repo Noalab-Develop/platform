@@ -58,7 +58,7 @@ export default function Home() {
       <HeroBanner />
 
       {/* Highlight */}
-      <section className="bg-[#0A2540] py-8">
+      <section className="bg-[#6B7280] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
           Obtenha liderança técnica experiente sob demanda, sem custo de um executivo em tempo integral.
           Estratégias claras em engenharia, arquitetura de software, integrações e segurança da informação.
