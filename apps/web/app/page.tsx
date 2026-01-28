@@ -67,7 +67,7 @@ export default function Home() {
               Liderança técnica para decisões críticas em tecnologia
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-gray-200">
-              Apoio estratégico para você acelerar tecnologia, reduzir riscos e aumentar resultados.
+              Apoio estratégico para você acelerar seu negócio, reduzir riscos e aumentar resultados.
             </p>
           </div>
         </div>
@@ -76,8 +76,8 @@ export default function Home() {
       {/* Blue Highlight Strip */}
       <section className="bg-[#0A2540] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
-          `Obtenha liderança técnica experiente sob demanda, sem custo de um executivo em tempo integral.
-          Estratégias claras em engenharia, arquitetura de software, integrações e segurança da Informação.`
+          Obtenha liderança técnica experiente sob demanda, sem custo de um executivo em tempo integral.
+          Estratégias claras em engenharia, arquitetura de software, integrações e segurança da Informação.
         </p>
       </section>
 
