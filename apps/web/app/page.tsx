@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Blue Highlight Strip */}
-      <section className="bg-[#1F4FD8] py-8">
+      <section className="bg-[#0A2540] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
           Decisões técnicas sólidas hoje evitam custos exponenciais amanhã.
         </p>
