@@ -65,7 +65,13 @@ function CardLarge({
   return (
     <div className="rounded-lg bg-white shadow-lg overflow-hidden text-[#111827]">
       <div className="relative h-56 w-full">
-        <Image src={image} alt={title} fill className="object-cover" unoptimized />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+          unoptimized
+        />
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold">{title}</h3>
