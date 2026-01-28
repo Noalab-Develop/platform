@@ -44,7 +44,7 @@ header {
 }
 
 /* ===================================================
-   🌤️ REALISTIC WEATHER HERO (REFINED)
+   🌤️ REALISTIC WEATHER HERO (FINAL FIX)
 =================================================== */
 
 .hero {
@@ -55,14 +55,18 @@ header {
 }
 
 @media (min-width: 640px) {
-  .hero { height: 360px; }
+  .hero {
+    height: 360px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .hero { height: 500px; }
+  .hero {
+    height: 500px;
+  }
 }
 
-/* ================= SKY ================= */
+/* ================= SKY LAYER ================= */
 
 .hero-sky {
   position: absolute;
@@ -70,15 +74,19 @@ header {
   z-index: 1;
   background-size: 200% 200%;
   animation: skyDrift 40s ease-in-out infinite;
+  opacity: 0.45;                 /* CRÍTICO */
+  mix-blend-mode: overlay;       /* CRÍTICO */
 }
+
+/* ================= WEATHER STATES ================= */
 
 /* ☀️ CLEAR */
 .hero-clear .hero-sky {
   background: linear-gradient(
     to bottom,
-    #87ceeb 0%,
-    #6fbce6 35%,
-    #0a2540 100%
+    rgba(135, 206, 235, 0.9),
+    rgba(111, 188, 230, 0.6),
+    rgba(10, 37, 64, 0.4)
   );
 }
 
@@ -86,9 +94,9 @@ header {
 .hero-clouds .hero-sky {
   background: linear-gradient(
     to bottom,
-    #bfc9d6 0%,
-    #8a9bb0 45%,
-    #1e293b 100%
+    rgba(191, 201, 214, 0.9),
+    rgba(138, 155, 176, 0.6),
+    rgba(30, 41, 59, 0.5)
   );
 }
 
@@ -96,8 +104,8 @@ header {
 .hero-rain .hero-sky {
   background: linear-gradient(
     to bottom,
-    #1e293b 0%,
-    #020617 80%
+    rgba(30, 41, 59, 0.9),
+    rgba(2, 6, 23, 0.85)
   );
 }
 
@@ -105,9 +113,9 @@ header {
 .hero-sunrise .hero-sky {
   background: linear-gradient(
     to bottom,
-    #fbc4a4 0%,
-    #f59e8b 45%,
-    #0a2540 100%
+    rgba(251, 196, 164, 0.9),
+    rgba(245, 158, 139, 0.6),
+    rgba(10, 37, 64, 0.45)
   );
 }
 
@@ -115,9 +123,9 @@ header {
 .hero-sunset .hero-sky {
   background: linear-gradient(
     to bottom,
-    #f7b267 0%,
-    #e3645a 45%,
-    #0a2540 100%
+    rgba(247, 178, 103, 0.9),
+    rgba(227, 100, 90, 0.6),
+    rgba(10, 37, 64, 0.45)
   );
 }
 
@@ -125,8 +133,8 @@ header {
 .hero-night .hero-sky {
   background: linear-gradient(
     to bottom,
-    #020617,
-    #020617
+    rgba(2, 6, 23, 0.85),
+    rgba(2, 6, 23, 0.95)
   );
 }
 
@@ -144,8 +152,8 @@ header {
   transform: translateX(-50%);
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.45),
-    rgba(255,255,255,0.15),
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.15),
     transparent 70%
   );
   filter: blur(60px);
@@ -168,19 +176,20 @@ header {
 .hero-clouds-layer {
   position: absolute;
   inset: -40%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='450'%3E%3Cg fill='rgba(255,255,255,0.18)'%3E%3Cellipse cx='250' cy='220' rx='240' ry='95'/%3E%3Cellipse cx='600' cy='200' rx='320' ry='130'/%3E%3C/g%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='450'%3E%3Cg fill='rgba(255,255,255,0.25)'%3E%3Cellipse cx='250' cy='220' rx='240' ry='95'/%3E%3Cellipse cx='600' cy='200' rx='320' ry='130'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 900px 450px;
   z-index: 2;
+  opacity: 0.35;
+  mix-blend-mode: screen;
   animation: cloudsDrift 180s linear infinite;
 }
 
-/* Clouds só aparecem quando nublado */
 .hero-clear .hero-clouds-layer,
 .hero-night .hero-clouds-layer {
   display: none;
 }
 
-/* ================= RAIN ================= */
+/* ================= EFFECTS ================= */
 
 .hero-effects {
   position: absolute;
@@ -189,11 +198,12 @@ header {
   pointer-events: none;
 }
 
+/* 🌧️ Rain */
 .hero-rain .hero-effects {
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(255,255,255,0.35),
-    rgba(255,255,255,0.35) 1px,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.35) 1px,
     transparent 1px,
     transparent 16px
   );
@@ -207,8 +217,8 @@ header {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10,37,64,0.25),
-    rgba(10,37,64,0.7)
+    rgba(10, 37, 64, 0.15),
+    rgba(10, 37, 64, 0.55)
   );
   z-index: 4;
 }
@@ -243,13 +253,20 @@ header {
 /* ================= ANIMATIONS ================= */
 
 @keyframes skyDrift {
-  0% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
-  100% { background-position: 50% 0%; }
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
 }
 
 @keyframes sunFloat {
-  0%,100% {
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
@@ -258,13 +275,21 @@ header {
 }
 
 @keyframes cloudsDrift {
-  from { transform: translateX(-10%); }
-  to { transform: translateX(10%); }
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(10%);
+  }
 }
 
 @keyframes rainFall {
-  from { background-position-y: 0; }
-  to { background-position-y: 100%; }
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 100%;
+  }
 }
 
 /* ===================================================
@@ -292,8 +317,13 @@ header {
   height: 36px;
 }
 
-.swiper-button-next { right: -6px; }
-.swiper-button-prev { left: -6px; }
+.swiper-button-next {
+  right: -6px;
+}
+
+.swiper-button-prev {
+  left: -6px;
+}
 
 .swiper-pagination {
   bottom: 0 !important;
