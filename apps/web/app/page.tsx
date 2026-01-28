@@ -135,10 +135,18 @@ export default function Home() {
             Comece com uma avaliação técnica e um roadmap claro.
           </p>
           <a
-            href="mailto:noalabconsulting@protomail.com"
-            className="mt-6 inline-block rounded-full bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38BDF8]"
+            href="mailto:noalabconsulting@protomail.com
+          ?subject=Avaliação%20Técnica%20-%20Noalab
+          &body=Olá%20Noalab,%0A%0A
+          Gostaria%20de%20solicitar%20uma%20avaliação%20técnica%20para%20meu%20projeto.%0A%0A
+          Empresa:%20%0A
+          Tipo%20de%20produto:%20(SaaS,%20API,%20Marketplace,%20etc)%0A
+          Principais%20desafios%20atuais:%20%0A%0A
+          Fico%20no%20aguardo%20do%20retorno.%0A%0A
+          Obrigado!"
+          className="mt-6 inline-block rounded-full bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38BDF8]"
           >
-            Solicitar avaliação
+          Solicitar avaliação
           </a>
         </div>
       </section>
