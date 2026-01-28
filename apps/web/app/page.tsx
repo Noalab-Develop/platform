@@ -17,23 +17,23 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#0A2540]/80 backdrop-blur-md border-b border-white/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          
+
           {/* Brand */}
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center font-bold text-white">
               N
             </div>
-        
+
             <div className="leading-tight">
               <span className="block font-[var(--font-sora)] text-lg font-semibold text-white">
                 Noalab
               </span>
               <span className="block text-xs tracking-wide text-blue-400">
-                CTO as a Service
+                Tech Consulting
               </span>
             </div>
           </div>
-        
+
           {/* Nav */}
           <nav className="hidden items-center gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
             {["servicos", "beneficios", "contato"].map((item) => (
@@ -64,17 +64,17 @@ export default function Home() {
 
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
             <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
-              CTO as a Service com foco em IA e Engenharia
+              Liderança técnica para decisões críticas em tecnologia
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-gray-200">
-              Liderança técnica para arquitetura, integrações e segurança de sistemas.
+              Apoio estratégico em engenharia, arquitetura e segurança desde o início.
             </p>
           </div>
         </div>
       </section>
 
       {/* Blue Highlight Strip */}
-      <section className="bg-[#1F4FD8] py-8">
+      <section className="bg-[#0A2540] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
           Decisões técnicas sólidas hoje evitam custos exponenciais amanhã.
         </p>
