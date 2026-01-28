@@ -3,27 +3,89 @@
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
 
+/* ===============================
+   Design tokens
+================================ */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Fonts (definidas no layout.tsx) */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-sora);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ===============================
+   Dark mode
+================================ */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0a2540;
     --foreground: #ededed;
   }
 }
 
+/* ===============================
+   Base styles
+================================ */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+header {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+/* ===============================
+   Swiper FIXES (OBRIGATÓRIO)
+================================ */
+
+/* Evita vazamento de layout */
+.swiper {
+  overflow: visible;
+}
+
+/* Mantém altura consistente */
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+/* Navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1f4fd8;
+  width: 36px;
+  height: 36px;
+}
+
+.swiper-button-next {
+  right: -6px;
+}
+
+.swiper-button-prev {
+  left: -6px;
+}
+
+/* Pagination (bolinhas) */
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+/* Espaçamento extra abaixo do carousel */
+.swiper {
+  padding-bottom: 3rem;
 }

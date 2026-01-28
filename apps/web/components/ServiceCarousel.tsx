@@ -10,22 +10,25 @@ import "swiper/css/navigation";
 
 export function ServicesCarousel() {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <Swiper
         modules={[Pagination, Navigation]}
         spaceBetween={24}
         slidesPerView={1}
-        pagination={{ clickable: true }}
         navigation
+        pagination={{ clickable: true }}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        className="!overflow-visible"
+        className="pb-14"
       >
         {services.map((service) => (
-          <SwiperSlide key={service.title} className="h-auto">
+          <SwiperSlide
+            key={service.title}
+            className="flex h-auto justify-center"
+          >
             <CardLarge {...service} />
           </SwiperSlide>
         ))}
@@ -67,7 +70,7 @@ function CardLarge({
   image: string;
 }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-lg text-[#111827]">
+    <div className="flex h-full max-w-[360px] flex-col overflow-hidden rounded-xl bg-white shadow-lg text-[#111827]">
       
       {/* Image */}
       <div className="relative h-56 w-full shrink-0">
