@@ -34,7 +34,7 @@ export default function Home() {
                 Noalab
               </span>
               <span className="block text-xs tracking-wide text-blue-400">
-                Tech Consulting
+                Consultoria em Tech
               </span>
             </div>
           </div>
