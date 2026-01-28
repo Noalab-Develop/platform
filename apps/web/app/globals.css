@@ -44,7 +44,7 @@ header {
 }
 
 /* ===================================================
-   🌤️ REALISTIC WEATHER HERO (FINAL FIX)
+   🌤️ REALISTIC WEATHER HERO (FINAL)
 =================================================== */
 
 .hero {
@@ -66,7 +66,10 @@ header {
   }
 }
 
-/* ================= SKY LAYER ================= */
+/* ================= IMAGE BASE ================= */
+/* A imagem vem do Next/Image (z-0) */
+
+/* ================= SKY BLEND LAYER ================= */
 
 .hero-sky {
   position: absolute;
@@ -74,8 +77,8 @@ header {
   z-index: 1;
   background-size: 200% 200%;
   animation: skyDrift 40s ease-in-out infinite;
-  opacity: 0.45;                 /* CRÍTICO */
-  mix-blend-mode: overlay;       /* CRÍTICO */
+  opacity: 0.45;
+  mix-blend-mode: overlay;
 }
 
 /* ================= WEATHER STATES ================= */
@@ -198,16 +201,18 @@ header {
   pointer-events: none;
 }
 
-/* 🌧️ Rain */
+/* 🌧️ RAIN (VERTICAL CORRECT) */
 .hero-rain .hero-effects {
   background-image: repeating-linear-gradient(
-    to bottom,
+    115deg,
     rgba(255, 255, 255, 0.35),
     rgba(255, 255, 255, 0.35) 1px,
     transparent 1px,
-    transparent 16px
+    transparent 18px
   );
-  animation: rainFall 0.5s linear infinite;
+  background-size: 2px 22px;
+  animation: rainFall 0.45s linear infinite;
+  opacity: 0.75;
 }
 
 /* ================= OVERLAY ================= */
@@ -284,11 +289,11 @@ header {
 }
 
 @keyframes rainFall {
-  from {
-    background-position-y: 0;
+  0% {
+    background-position: 0 0;
   }
-  to {
-    background-position-y: 100%;
+  100% {
+    background-position: 0 120%;
   }
 }
 
