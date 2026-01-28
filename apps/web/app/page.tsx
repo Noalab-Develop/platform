@@ -1,4 +1,7 @@
+
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
 
 export const metadata = {
   title: "Noalab | CTO as a Service – Engenharia, Segurança, Integrações",
@@ -12,82 +15,81 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0A2540] text-white">
-      {/* Header */}
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Logo Noalab" width={40} height={40} priority />
-          <span className="text-lg font-semibold">Noalab</span>
-        </div>
-        <nav className="hidden gap-8 text-sm text-gray-300 md:flex">
-          <a href="#servicos" className="hover:text-white">Serviços</a>
-          <a href="#beneficios" className="hover:text-white">Benefícios</a>
-          <a href="#contato" className="hover:text-white">Contato</a>
-        </nav>
-      </header>
 
-      {/* Hero */}
-      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-28 md:grid-cols-2">
-        <div className="z-10">
-          <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-            CTO as a Service para estruturar, escalar e proteger sua tecnologia.
+      {/* Banner Top */}
+      <section className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full">
+        <Image
+          src="/hero-banner.jpg"
+          alt="Banner principal - tecnologia e liderança técnica"
+          fill
+          className="object-cover"
+          unoptimized
+        />
+        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-6">
+          <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
+            Soluções de Tecnologia sob Medida
           </h1>
-          <p className="mt-6 text-lg text-gray-300">
-            Liderança técnica sob demanda para decisões estratégicas em engenharia
-            de software, arquitetura, integrações e segurança da informação.
+          <p className="mt-4 text-lg sm:text-xl text-gray-200 max-w-2xl">
+            Acelere sua Engenharia, Integrações e Segurança com liderança técnica sob demanda.
           </p>
-          <div className="mt-10">
-            <a
-              href="#contato"
-              className="inline-block rounded-md bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white hover:bg-[#38BDF8]"
-            >
-              Solicitar avaliação técnica
-            </a>
-          </div>
-        </div>
-
-        {/* Hero Image + Overlay (desktop only) */}
-        <div className="relative hidden h-[420px] w-full overflow-hidden rounded-lg md:block">
-          <Image
-            src="/hero-tech.jpg"
-            alt="Tecnologia e engenharia de software"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
         </div>
       </section>
 
-      {/* Serviços */}
+      {/* Serviços - Carousel */}
       <section id="servicos" className="bg-[#F9FAFB] px-6 py-24 text-[#111827]">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold">O que fazemos</h2>
-          <p className="mt-4 max-w-3xl text-gray-600">
+          <h2 className="text-3xl font-semibold text-center">O que fazemos</h2>
+          <p className="mt-4 text-center max-w-3xl mx-auto text-gray-600">
             Atuação estratégica como CTO para garantir decisões técnicas sólidas,
             redução de riscos e crescimento sustentável.
           </p>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-4">
-            <ServiceCard
-              title="Engenharia de Software"
-              description="Padrões, revisão de código e direcionamento técnico."
-              image="/services/engineering.jpg"
-            />
-            <ServiceCard
-              title="Arquitetura de Software"
-              description="Sistemas escaláveis, resilientes e de baixo custo."
-              image="/services/architecture.jpg"
-            />
-            <ServiceCard
-              title="Integrações"
-              description="APIs, webhooks, filas e pipelines de dados."
-              image="/services/integrations.jpg"
-            />
-            <ServiceCard
-              title="Segurança da Informação"
-              description="Autenticação, autorização e proteção de dados."
-              image="/services/security.jpg"
-            />
+          <div className="mt-12">
+            <Swiper
+              modules={[Pagination, Navigation]}
+              spaceBetween={24}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              navigation
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide>
+                <CardLarge
+                  title="Engenharia de Software"
+                  description="Padrões, revisão de código e direcionamento técnico."
+                  image="/services/engineering.jpg"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <CardLarge
+                  title="Arquitetura de Software"
+                  description="Sistemas escaláveis, resilientes e de baixo custo."
+                  image="/services/architecture.jpg"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <CardLarge
+                  title="Integrações"
+                  description="APIs, webhooks, filas e pipelines de dados."
+                  image="/services/integrations.jpg"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <CardLarge
+                  title="Segurança da Informação"
+                  description="Autenticação, autorização e proteção de dados."
+                  image="/services/security.jpg"
+                />
+              </SwiperSlide>
+
+            </Swiper>
           </div>
         </div>
       </section>
@@ -97,6 +99,7 @@ export default function Home() {
         id="beneficios"
         className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-24 md:grid-cols-2"
       >
+        {/* Text */}
         <div className="z-10">
           <h2 className="text-3xl font-semibold">Por que escolher a Noalab</h2>
           <ul className="mt-8 space-y-4 text-gray-300">
@@ -114,6 +117,7 @@ export default function Home() {
             alt="Consultoria técnica e tomada de decisão"
             fill
             className="object-cover"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -147,7 +151,7 @@ export default function Home() {
   );
 }
 
-function ServiceCard({
+function CardLarge({
   title,
   description,
   image,
@@ -157,13 +161,20 @@ function ServiceCard({
   image: string;
 }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-      <div className="relative mb-4 h-14 w-14 overflow-hidden rounded-md">
-        <Image src={image} alt={title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/10" />
+    <div className="rounded-lg bg-white shadow-lg overflow-hidden text-[#111827]">
+      <div className="relative h-48 w-full">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+          unoptimized
+        />
       </div>
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="mt-3 text-sm text-gray-600">{description}</p>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold">{title}</h3>
+        <p className="mt-2 text-sm text-gray-700">{description}</p>
+      </div>
     </div>
   );
 }
