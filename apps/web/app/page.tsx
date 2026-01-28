@@ -64,10 +64,10 @@ export default function Home() {
 
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
             <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
-              Liderança técnica para você acelerar tecnologia, reduzir riscos e aumentar resultados.
+              Liderança técnica para decisões críticas em tecnologia
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-gray-200">
-              Apoio estratégico em engenharia, arquitetura e segurança desde o início.
+              Apoio estratégico para você acelerar tecnologia, reduzir riscos e aumentar resultados.
             </p>
           </div>
         </div>
