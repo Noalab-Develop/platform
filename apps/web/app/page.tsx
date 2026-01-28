@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroBanner } from "@/components/HeroBanner";
 import { ServicesCarousel } from "@/components/ServiceCarousel";
 
 export const metadata = {
@@ -20,15 +21,14 @@ export default function Home() {
 
           {/* Brand */}
           <div className="flex items-center gap-3">
-              <Image
-                src="/logo-128.png"
-                alt="Noalab"
-                width={64}
-                height={64}
-                className="rounded-lg"
-                priority
-              />
-
+            <Image
+              src="/logo-128.png"
+              alt="Noalab"
+              width={48}
+              height={48}
+              className="rounded-lg"
+              priority
+            />
             <div className="leading-tight">
               <span className="block font-[var(--font-sora)] text-lg font-semibold text-white">
                 Noalab
@@ -41,7 +41,7 @@ export default function Home() {
 
           {/* Nav */}
           <nav className="hidden items-center gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
-            {["serviços", "benefícios", "contato"].map((item) => (
+            {["servicos", "beneficios", "contato"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
@@ -54,39 +54,19 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero / Ocean Live Banner */}
-      <section className="relative w-full overflow-hidden">
-        <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[500px]">
-                
-          {/* Ocean texture animated */}
-          <div className="absolute inset-0 ocean-live-bg"></div>
-                
-          {/* Overlay para contraste */}
-          <div className="absolute inset-0 bg-[#0A2540]/75"></div>
-                
-          {/* Conteúdo */}
-          <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-            <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
-              Liderança técnica para decisões críticas em tecnologia
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-gray-200">
-              Apoio estratégico para você acelerar seu negócio, reduzir riscos e aumentar resultados.
-            </p>
-          </div>
-                
-        </div>
-      </section>
+      {/* Hero (Weather-based) */}
+      <HeroBanner />
 
-      {/* Blue Highlight Strip */}
+      {/* Highlight */}
       <section className="bg-[#0A2540] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
           Obtenha liderança técnica experiente sob demanda, sem custo de um executivo em tempo integral.
-          Estratégias claras em engenharia, arquitetura de software, integrações e segurança da Informação.
+          Estratégias claras em engenharia, arquitetura de software, integrações e segurança da informação.
         </p>
       </section>
 
       {/* Serviços */}
-      <section id="serviços" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="servicos" className="mx-auto max-w-7xl px-6 py-20">
         <div className="rounded-2xl bg-[#F9FAFB] px-8 py-14 shadow-lg">
           <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-center text-[#111827]">
             O que fazemos
@@ -102,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Benefícios */}
-      <section id="benefícios" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="beneficios" className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
             <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-white">
@@ -138,19 +118,12 @@ export default function Home() {
           <p className="mt-3 text-gray-400">
             Comece com uma avaliação técnica e um roadmap claro.
           </p>
+
           <a
-            href="mailto:noalabconsulting@protomail.com
-          ?subject=Avaliação%20Técnica%20-%20Noalab
-          &body=Olá%20Noalab,%0A%0A
-          Gostaria%20de%20solicitar%20uma%20avaliação%20técnica%20para%20meu%20projeto.%0A%0A
-          Empresa:%20%0A
-          Tipo%20de%20produto:%20(SaaS,%20API,%20Marketplace,%20etc)%0A
-          Principais%20desafios%20atuais:%20%0A%0A
-          Fico%20no%20aguardo%20do%20retorno.%0A%0A
-          Obrigado!"
-          className="mt-6 inline-block rounded-full bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38BDF8]"
+            href="mailto:noalabconsulting@protomail.com?subject=Avaliação%20Técnica%20-%20Noalab&body=Olá%20Noalab,%0A%0AGostaria%20de%20solicitar%20uma%20avaliação%20técnica%20para%20meu%20projeto.%0A%0AEmpresa:%0ATipo%20de%20produto:%20(SaaS,%20API,%20Marketplace,%20etc)%0APrincipais%20desafios%20atuais:%0A%0AFico%20no%20aguardo.%0A%0AObrigado!"
+            className="mt-6 inline-block rounded-full bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38BDF8]"
           >
-          Solicitar avaliação
+            Solicitar avaliação
           </a>
         </div>
       </section>
