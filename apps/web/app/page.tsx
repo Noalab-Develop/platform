@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { ServicesCarousel } from "@/components/ServicesCarousel";
 
 export const metadata = {
   title: "Noalab | CTO as a Service – Engenharia, Segurança, Integrações",
@@ -16,7 +13,6 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0A2540] text-white">
-
       {/* Banner Top */}
       <section className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full">
         <Image
@@ -24,6 +20,7 @@ export default function Home() {
           alt="Banner principal - tecnologia e liderança técnica"
           fill
           className="object-cover"
+          priority
           unoptimized
         />
         <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-6">
@@ -36,7 +33,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Serviços - Carousel */}
+      {/* Serviços */}
       <section id="servicos" className="bg-[#F9FAFB] px-6 py-24 text-[#111827]">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-3xl font-semibold text-center">O que fazemos</h2>
@@ -46,51 +43,7 @@ export default function Home() {
           </p>
 
           <div className="mt-12">
-            <Swiper
-              modules={[Pagination, Navigation]}
-              spaceBetween={24}
-              slidesPerView={1}
-              pagination={{ clickable: true }}
-              navigation
-              breakpoints={{
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-            >
-              <SwiperSlide>
-                <CardLarge
-                  title="Engenharia de Software"
-                  description="Padrões, revisão de código e direcionamento técnico."
-                  image="/services/engineering.jpg"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <CardLarge
-                  title="Arquitetura de Software"
-                  description="Sistemas escaláveis, resilientes e de baixo custo."
-                  image="/services/architecture.jpg"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <CardLarge
-                  title="Integrações"
-                  description="APIs, webhooks, filas e pipelines de dados."
-                  image="/services/integrations.jpg"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <CardLarge
-                  title="Segurança da Informação"
-                  description="Autenticação, autorização e proteção de dados."
-                  image="/services/security.jpg"
-                />
-              </SwiperSlide>
-
-            </Swiper>
+            <ServicesCarousel />
           </div>
         </div>
       </section>
@@ -100,8 +53,7 @@ export default function Home() {
         id="beneficios"
         className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 py-24 md:grid-cols-2"
       >
-        {/* Text */}
-        <div className="z-10">
+        <div>
           <h2 className="text-3xl font-semibold">Por que escolher a Noalab</h2>
           <ul className="mt-8 space-y-4 text-gray-300">
             <li>• Liderança técnica sem custo de CTO full-time</li>
@@ -111,7 +63,6 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* Benefits Image + Overlay (desktop only) */}
         <div className="relative hidden h-[320px] w-full overflow-hidden rounded-lg md:block">
           <Image
             src="/benefits.jpg"
@@ -149,33 +100,5 @@ export default function Home() {
         © {new Date().getFullYear()} Noalab. Todos os direitos reservados.
       </footer>
     </main>
-  );
-}
-
-function CardLarge({
-  title,
-  description,
-  image,
-}: {
-  title: string;
-  description: string;
-  image: string;
-}) {
-  return (
-    <div className="rounded-lg bg-white shadow-lg overflow-hidden text-[#111827]">
-      <div className="relative h-48 w-full">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-          unoptimized
-        />
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="mt-2 text-sm text-gray-700">{description}</p>
-      </div>
-    </div>
   );
 }
