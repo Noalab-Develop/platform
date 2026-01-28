@@ -23,8 +23,8 @@ export default function Home() {
               <Image
                 src="/logo-128.png"
                 alt="Noalab"
-                width={128}
-                height={128}
+                width={64}
+                height={64}
                 className="rounded-lg"
                 priority
               />
