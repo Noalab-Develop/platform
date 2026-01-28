@@ -10,11 +10,12 @@ import "swiper/css/navigation";
 
 export function ServicesCarousel() {
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full rounded-2xl bg-[#EEF3FB] px-4 py-10">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={24}
         slidesPerView={1}
+        loop
         navigation
         pagination={{ clickable: true }}
         autoplay={{
@@ -76,7 +77,8 @@ function CardLarge({
   image: string;
 }) {
   return (
-    <div className="flex h-full max-w-[360px] flex-col overflow-hidden rounded-xl bg-white shadow-lg text-[#111827]">
+    <div className="flex h-full max-w-[360px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition hover:shadow-lg text-[#111827]">
+      {/* Image */}
       <div className="relative h-56 w-full shrink-0">
         <Image
           src={image}
@@ -87,9 +89,12 @@ function CardLarge({
         />
       </div>
 
+      {/* Content */}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="mt-2 text-sm text-gray-700">{description}</p>
+        <p className="mt-2 text-sm text-gray-700">
+          {description}
+        </p>
       </div>
     </div>
   );
