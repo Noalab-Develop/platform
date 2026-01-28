@@ -17,24 +17,30 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#0A2540]/90 backdrop-blur-md border-b border-white/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <span className="text-lg font-semibold tracking-tight">Noalab</span>
-          <nav className="hidden gap-8 text-sm text-gray-300 md:flex">
-            <a href="#servicos" className="hover:text-white transition">
-              Serviços
-            </a>
-            <a href="#beneficios" className="hover:text-white transition">
-              Benefícios
-            </a>
-            <a href="#contato" className="hover:text-white transition">
-              Contato
-            </a>
+          <span className="font-[var(--font-sora)] text-xl font-semibold tracking-wide text-white">
+            Noalab
+            <span className="ml-2 text-sm font-medium tracking-wider text-blue-400">
+              Tech Consulting
+            </span>
+          </span>
+
+          <nav className="hidden gap-10 text-sm font-medium tracking-wide text-gray-300 md:flex">
+            {["servicos", "beneficios", "contato"].map((item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                className="relative transition hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-blue-400 after:transition-all hover:after:w-full"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+            ))}
           </nav>
         </div>
       </header>
 
       {/* Hero / Banner */}
       <section className="relative w-full overflow-hidden">
-        <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] w-full">
+        <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[500px]">
           <Image
             src="/hero-banner.jpg"
             alt="Tecnologia, IA e liderança técnica"
@@ -45,8 +51,8 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-black/60" />
 
-          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
-            <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+          <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+            <h1 className="font-[var(--font-sora)] text-3xl font-semibold sm:text-4xl lg:text-5xl">
               CTO as a Service com foco em IA e Engenharia
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-gray-200">
@@ -57,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Blue Highlight Strip */}
-      <section className="bg-[#0A2540] py-8">
+      <section className="bg-[#1F4FD8] py-8">
         <p className="mx-auto max-w-5xl px-6 text-center text-lg font-medium text-white">
           Decisões técnicas sólidas hoje evitam custos exponenciais amanhã.
         </p>
@@ -66,7 +72,7 @@ export default function Home() {
       {/* Serviços */}
       <section id="servicos" className="mx-auto max-w-7xl px-6 py-20">
         <div className="rounded-2xl bg-[#F9FAFB] px-8 py-14 shadow-lg">
-          <h2 className="text-2xl font-semibold text-center text-[#111827]">
+          <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-center text-[#111827]">
             O que fazemos
           </h2>
           <p className="mt-3 text-center text-gray-600">
@@ -83,7 +89,7 @@ export default function Home() {
       <section id="beneficios" className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-semibold text-white">
+            <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-white">
               Por que escolher a Noalab
             </h2>
             <ul className="mt-6 space-y-3 text-gray-300">
@@ -110,7 +116,7 @@ export default function Home() {
       {/* CTA */}
       <section id="contato" className="mx-auto max-w-5xl px-6 pb-20">
         <div className="rounded-2xl bg-[#111827] px-8 py-14 text-center shadow-md">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="font-[var(--font-sora)] text-2xl font-semibold text-white">
             Vamos estruturar sua tecnologia?
           </h2>
           <p className="mt-3 text-gray-400">
@@ -118,7 +124,7 @@ export default function Home() {
           </p>
           <a
             href="mailto:noalabconsulting@protomail.com"
-            className="mt-6 inline-block rounded-full bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white hover:bg-[#38BDF8] transition"
+            className="mt-6 inline-block rounded-full bg-[#1F4FD8] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#38BDF8]"
           >
             Solicitar avaliação
           </a>
