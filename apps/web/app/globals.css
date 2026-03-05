@@ -44,7 +44,7 @@ header {
 }
 
 /* ===================================================
-   🌤️ REALISTIC WEATHER HERO (FINAL)
+   🌤️ ANIMATED WEATHER HERO (CSS ONLY)
 =================================================== */
 
 .hero {
@@ -66,27 +66,29 @@ header {
   }
 }
 
-/* ================= SKY BLEND ================= */
+/* ================= SKY BASE LAYER ================= */
 
 .hero-sky {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-size: 200% 200%;
-  animation: skyDrift 40s ease-in-out infinite;
-  opacity: 0.45;
-  mix-blend-mode: overlay;
+  background-size: 100% 160%;
+  background-position: 0% 0%;
+  animation: skyDrift 30s ease-in-out infinite;
 }
 
-/* ================= WEATHER STATES ================= */
+/* ================= WEATHER SKY GRADIENTS ================= */
 
 /* ☀️ CLEAR */
 .hero-clear .hero-sky {
   background: linear-gradient(
     to bottom,
-    rgba(135, 206, 235, 0.9),
-    rgba(111, 188, 230, 0.6),
-    rgba(10, 37, 64, 0.4)
+    #0d47a1 0%,
+    #1565c0 18%,
+    #1e88e5 42%,
+    #42a5f5 66%,
+    #81d4fa 85%,
+    #b3e5fc 100%
   );
 }
 
@@ -94,9 +96,11 @@ header {
 .hero-clouds .hero-sky {
   background: linear-gradient(
     to bottom,
-    rgba(191, 201, 214, 0.9),
-    rgba(138, 155, 176, 0.6),
-    rgba(30, 41, 59, 0.5)
+    #263238 0%,
+    #37474f 28%,
+    #546e7a 58%,
+    #78909c 82%,
+    #b0bec5 100%
   );
 }
 
@@ -104,8 +108,10 @@ header {
 .hero-rain .hero-sky {
   background: linear-gradient(
     to bottom,
-    rgba(30, 41, 59, 0.9),
-    rgba(2, 6, 23, 0.85)
+    #080c14 0%,
+    #0f1824 40%,
+    #18253a 75%,
+    #1c2a3e 100%
   );
 }
 
@@ -113,9 +119,13 @@ header {
 .hero-sunrise .hero-sky {
   background: linear-gradient(
     to bottom,
-    rgba(251, 196, 164, 0.9),
-    rgba(245, 158, 139, 0.6),
-    rgba(10, 37, 64, 0.45)
+    #0d1f3c 0%,
+    #1a2d70 18%,
+    #7b2d8b 36%,
+    #d4502a 54%,
+    #f09030 72%,
+    #ffd060 90%,
+    #ffe590 100%
   );
 }
 
@@ -123,9 +133,14 @@ header {
 .hero-sunset .hero-sky {
   background: linear-gradient(
     to bottom,
-    rgba(247, 178, 103, 0.9),
-    rgba(227, 100, 90, 0.6),
-    rgba(10, 37, 64, 0.45)
+    #080e1e 0%,
+    #15154a 15%,
+    #5a1a78 30%,
+    #b82040 48%,
+    #d84020 62%,
+    #f07030 75%,
+    #ffa050 87%,
+    #ffd070 100%
   );
 }
 
@@ -133,45 +148,143 @@ header {
 .hero-night .hero-sky {
   background: linear-gradient(
     to bottom,
-    rgba(2, 6, 23, 0.85),
-    rgba(2, 6, 23, 0.95)
+    #010308 0%,
+    #020817 55%,
+    #061228 100%
   );
 }
 
-/* ================= SUN / LIGHT ================= */
+/* ================= SOL ================= */
 
-.hero-clear .hero-sky::before,
-.hero-sunrise .hero-sky::before,
-.hero-sunset .hero-sky::before {
+/* Clear: sol no centro-alto */
+.hero-clear .hero-sky::before {
   content: "";
   position: absolute;
   top: 18%;
   left: 50%;
-  width: 360px;
-  height: 360px;
+  width: 58px;
+  height: 58px;
   transform: translateX(-50%);
+  border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.45),
-    rgba(255, 255, 255, 0.15),
-    transparent 70%
+    #fffde7 15%,
+    #fff176 45%,
+    #ffd54f 70%,
+    transparent 100%
   );
-  filter: blur(60px);
-  animation: sunFloat 18s ease-in-out infinite;
+  box-shadow:
+    0 0 0 4px rgba(255, 240, 100, 0.35),
+    0 0 25px 12px rgba(255, 220, 70, 0.6),
+    0 0 70px 35px rgba(255, 180, 40, 0.3),
+    0 0 150px 75px rgba(255, 140, 0, 0.12);
+  animation: sunFloat 14s ease-in-out infinite;
 }
 
-/* ================= STARS ================= */
+/* Sunrise: sol laranja no horizonte */
+.hero-sunrise .hero-sky::before {
+  content: "";
+  position: absolute;
+  bottom: 16%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fffde7 10%,
+    #ffa726 44%,
+    rgba(255, 80, 0, 0) 80%
+  );
+  box-shadow:
+    0 0 25px 12px rgba(255, 165, 50, 0.75),
+    0 0 70px 35px rgba(255, 100, 0, 0.5),
+    0 0 160px 80px rgba(255, 50, 0, 0.22);
+  animation: sunFloat 16s ease-in-out infinite;
+}
+
+/* Sunset: sol avermelhado mais baixo */
+.hero-sunset .hero-sky::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff3e0 10%,
+    #ff7043 48%,
+    rgba(200, 30, 0, 0) 80%
+  );
+  box-shadow:
+    0 0 25px 12px rgba(255, 120, 40, 0.75),
+    0 0 70px 35px rgba(200, 50, 0, 0.5),
+    0 0 160px 80px rgba(180, 10, 0, 0.22);
+  animation: sunFloat 16s ease-in-out infinite;
+}
+
+/* ================= ESTRELAS (NOITE) ================= */
 
 .hero-night .hero-sky::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 140px 140px;
-  opacity: 0.12;
+  background-image:
+    radial-gradient(circle at 7% 12%, white 1px, transparent 1px),
+    radial-gradient(circle at 18% 5%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 29% 18%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 41% 8%, white 1px, transparent 1px),
+    radial-gradient(circle at 53% 22%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 65% 6%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 77% 15%, white 1px, transparent 1px),
+    radial-gradient(circle at 89% 9%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 94% 28%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 11% 32%, white 1px, transparent 1px),
+    radial-gradient(circle at 23% 42%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 38% 36%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 49% 48%, white 1px, transparent 1px),
+    radial-gradient(circle at 60% 38%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 74% 44%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 84% 52%, white 1px, transparent 1px),
+    radial-gradient(circle at 3% 55%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 16% 62%, white 1px, transparent 1px),
+    radial-gradient(circle at 33% 58%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 58% 65%, white 0.8px, transparent 1px),
+    radial-gradient(circle at 91% 60%, white 1px, transparent 1px),
+    radial-gradient(circle at 45% 72%, white 1.2px, transparent 1px),
+    radial-gradient(circle at 70% 70%, white 0.8px, transparent 1px);
+  animation: starTwinkle 4s ease-in-out infinite alternate;
+  opacity: 0.85;
 }
 
-/* ================= CLOUDS ================= */
+/* ================= LUA ================= */
+
+.hero-night .hero-sky::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  right: 16%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 38% 38%,
+    #f5f5e0 0%,
+    #e8e8c8 45%,
+    #d0d0a8 75%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 10px 4px rgba(220, 230, 255, 0.45),
+    0 0 28px 14px rgba(200, 220, 255, 0.2);
+  animation: moonFloat 20s ease-in-out infinite;
+}
+
+/* ================= NUVENS ================= */
 
 .hero-clouds-layer {
   position: absolute;
@@ -187,14 +300,12 @@ header {
 .clouds-slow {
   animation-duration: 240s;
   opacity: 0.3;
-  transform: scale(1.15);
 }
 
 .clouds-fast {
   animation-duration: 120s;
   animation-direction: reverse;
   opacity: 0.2;
-  transform: scale(0.9);
 }
 
 .hero-clear .hero-clouds-layer,
@@ -202,7 +313,7 @@ header {
   display: none;
 }
 
-/* ================= EFFECTS ================= */
+/* ================= EFEITOS CLIMÁTICOS ================= */
 
 .hero-effects {
   position: absolute;
@@ -211,15 +322,15 @@ header {
   pointer-events: none;
 }
 
-/* 🌧️ RAIN — REAL DROPS (NO LINES) */
+/* 🌧️ CHUVA */
 .hero-rain .hero-effects {
   background-image:
     radial-gradient(
-      rgba(255,255,255,0.35) 1px,
+      rgba(255, 255, 255, 0.35) 1px,
       transparent 1.5px
     ),
     radial-gradient(
-      rgba(255,255,255,0.25) 1px,
+      rgba(255, 255, 255, 0.25) 1px,
       transparent 2px
     );
   background-size:
@@ -239,13 +350,13 @@ header {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10, 37, 64, 0.15),
+    rgba(10, 37, 64, 0.1),
     rgba(10, 37, 64, 0.55)
   );
   z-index: 4;
 }
 
-/* ================= CONTENT ================= */
+/* ================= CONTEÚDO ================= */
 
 .hero-content {
   position: relative;
@@ -272,21 +383,17 @@ header {
   color: #e5e7eb;
 }
 
-/* ================= ANIMATIONS ================= */
+/* ================= ANIMAÇÕES ================= */
 
 @keyframes skyDrift {
-  0% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
-  100% { background-position: 50% 0%; }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 0% 25%; }
+  100% { background-position: 0% 0%; }
 }
 
 @keyframes sunFloat {
-  0%,100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(12px);
-  }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
 }
 
 @keyframes cloudsDrift {
@@ -305,6 +412,17 @@ header {
       0 120%,
       6px 130%;
   }
+}
+
+@keyframes moonFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.02); }
+}
+
+@keyframes starTwinkle {
+  0% { opacity: 0.55; }
+  50% { opacity: 0.95; }
+  100% { opacity: 0.7; }
 }
 
 /* ===================================================

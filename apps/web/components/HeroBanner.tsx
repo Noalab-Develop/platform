@@ -1,34 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { useWeather } from "@/hooks/useWeather";
 
-const WEATHER_IMAGES: Record<string, string> = {
-  clear: "/weather/clear.jpg",
-  clouds: "/weather/clouds.jpg",
-  rain: "/weather/rain.jpg",
-  sunrise: "/weather/sunrise.jpg",
-  sunset: "/weather/sunset.jpg",
-  night: "/weather/night.jpg",
-};
-
 export function HeroBanner() {
-  const weatherRaw = useWeather();
-  const weather = WEATHER_IMAGES[weatherRaw] ? weatherRaw : "clear";
+  const weather = useWeather();
 
   return (
     <section className={`hero hero-${weather} relative`}>
-      {/* Background image */}
-      <Image
-        src={WEATHER_IMAGES[weather]}
-        alt={`Céu ${weather}`}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover z-0"
-      />
-
-      {/* Sky gradient (leve, só para dar vida) */}
+      {/* Sky gradient + sol/lua/estrelas via CSS */}
       <div className="hero-sky z-10" />
 
       {/* Clouds */}
