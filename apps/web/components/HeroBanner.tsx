@@ -24,6 +24,7 @@ export function HeroBanner() {
         alt={`Céu ${weather}`}
         fill
         priority
+        sizes="100vw"
         className="object-cover z-0"
       />
 

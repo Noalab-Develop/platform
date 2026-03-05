@@ -184,6 +184,19 @@ header {
   animation: cloudsDrift 180s linear infinite;
 }
 
+.clouds-slow {
+  animation-duration: 240s;
+  opacity: 0.3;
+  transform: scale(1.15);
+}
+
+.clouds-fast {
+  animation-duration: 120s;
+  animation-direction: reverse;
+  opacity: 0.2;
+  transform: scale(0.9);
+}
+
 .hero-clear .hero-clouds-layer,
 .hero-night .hero-clouds-layer {
   display: none;
