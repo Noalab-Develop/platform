@@ -324,23 +324,19 @@ header {
 
 /* 🌧️ CHUVA */
 .hero-rain .hero-effects {
+  inset: -25%;
+  transform: skewX(-12deg);
   background-image:
-    radial-gradient(
-      rgba(255, 255, 255, 0.35) 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      rgba(255, 255, 255, 0.25) 1px,
-      transparent 2px
-    );
+    radial-gradient(ellipse 1.5px 7px at center, rgba(200, 230, 255, 0.65) 50%, transparent 100%),
+    radial-gradient(ellipse 1px 5px at center, rgba(180, 210, 255, 0.45) 50%, transparent 100%),
+    radial-gradient(ellipse 1px 4px at center, rgba(220, 240, 255, 0.3) 50%, transparent 100%);
   background-size:
-    12px 22px,
-    18px 28px;
-  background-position:
-    0 -20%,
-    6px -30%;
-  animation: rainDrop 0.8s linear infinite;
-  opacity: 0.85;
+    18px 36px,
+    27px 54px,
+    13px 26px;
+  background-position: 0 0, 9px -18px, 5px 10px;
+  animation: rainFall 4s linear infinite;
+  opacity: 0.9;
 }
 
 /* ================= OVERLAY ================= */
@@ -401,17 +397,9 @@ header {
   to { transform: translateX(10%); }
 }
 
-@keyframes rainDrop {
-  0% {
-    background-position:
-      0 -20%,
-      6px -30%;
-  }
-  100% {
-    background-position:
-      0 120%,
-      6px 130%;
-  }
+@keyframes rainFall {
+  from { background-position: 0 0, 9px -18px, 5px 10px; }
+  to   { background-position: 0 108px, 9px 90px, 5px 118px; }
 }
 
 @keyframes moonFloat {
@@ -423,6 +411,51 @@ header {
   0% { opacity: 0.55; }
   50% { opacity: 0.95; }
   100% { opacity: 0.7; }
+}
+
+/* ===================================================
+   Reveal animations (scroll-triggered)
+=================================================== */
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ===================================================

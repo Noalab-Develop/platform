@@ -8,9 +8,25 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export function ServicesCarousel() {
+const SERVICE_IMAGES = [
+  "/services/engineering.jpg",
+  "/services/architecture.jpg",
+  "/services/integrations.jpg",
+  "/services/security.jpg",
+];
+
+interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  services: ServiceItem[];
+}
+
+export function ServicesCarousel({ services }: Props) {
   return (
-    <div className="relative w-full rounded-2xl bg-[#EEF3FB] px-4 py-10">
+    <div className="relative w-full px-4 py-4">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={24}
@@ -31,41 +47,22 @@ export function ServicesCarousel() {
         }}
         className="pb-14"
       >
-        {services.map((service) => (
+        {services.map((service, i) => (
           <SwiperSlide
             key={service.title}
             className="flex h-auto justify-center"
           >
-            <CardLarge {...service} />
+            <CardLarge
+              title={service.title}
+              description={service.description}
+              image={SERVICE_IMAGES[i]}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
 }
-
-const services = [
-  {
-    title: "Engenharia de Software",
-    description: "Padrões, revisão de código e direcionamento técnico.",
-    image: "/services/engineering.jpg",
-  },
-  {
-    title: "Arquitetura de Software",
-    description: "Sistemas escaláveis, resilientes e de baixo custo.",
-    image: "/services/architecture.jpg",
-  },
-  {
-    title: "Integrações",
-    description: "APIs, webhooks, filas e pipelines de dados.",
-    image: "/services/integrations.jpg",
-  },
-  {
-    title: "Segurança da Informação",
-    description: "Autenticação, autorização e proteção de dados.",
-    image: "/services/security.jpg",
-  },
-];
 
 function CardLarge({
   title,
@@ -78,7 +75,6 @@ function CardLarge({
 }) {
   return (
     <div className="flex h-full max-w-[360px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition hover:shadow-lg text-[#111827]">
-      {/* Image */}
       <div className="relative h-56 w-full shrink-0">
         <Image
           src={image}
@@ -88,13 +84,9 @@ function CardLarge({
           unoptimized
         />
       </div>
-
-      {/* Content */}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="mt-2 text-sm text-gray-700">
-          {description}
-        </p>
+        <p className="mt-2 text-sm text-gray-700">{description}</p>
       </div>
     </div>
   );

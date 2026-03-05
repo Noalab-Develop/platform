@@ -2,7 +2,12 @@
 
 import { useWeather } from "@/hooks/useWeather";
 
-export function HeroBanner() {
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+export function HeroBanner({ title, subtitle }: Props) {
   const weather = useWeather();
 
   return (
@@ -26,12 +31,8 @@ export function HeroBanner() {
 
       {/* Content */}
       <div className="hero-content z-50">
-        <h1 className="hero-title">
-          Liderança técnica para decisões críticas em tecnologia
-        </h1>
-        <p className="hero-subtitle">
-          Apoio estratégico para acelerar seu negócio, reduzir riscos e aumentar resultados.
-        </p>
+        <h1 className="hero-title">{title}</h1>
+        <p className="hero-subtitle">{subtitle}</p>
       </div>
     </section>
   );
