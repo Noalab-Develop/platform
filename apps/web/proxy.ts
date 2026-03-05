@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const acceptLanguage = request.headers.get("accept-language") ?? "";
 
   // Extrai o idioma principal (ex: "pt-BR,pt;q=0.9,en;q=0.8" → "pt")
