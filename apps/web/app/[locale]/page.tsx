@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HeroBanner } from "@/components/HeroBanner";
 import { ServicesCarousel } from "@/components/ServiceCarousel";
@@ -75,12 +74,6 @@ export default async function LocalePage({
 
           {/* Nav */}
           <nav className="hidden items-center gap-6 text-sm font-medium text-gray-300 md:flex">
-            <Link
-              href={`/${l}/sobre`}
-              className="relative transition hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-blue-400 after:transition-all hover:after:w-full"
-            >
-              {t.nav.about}
-            </Link>
             {navItems.map(({ href, label }) => (
               <a
                 key={href}
@@ -211,9 +204,6 @@ export default async function LocalePage({
             © {new Date().getFullYear()} Noalab. {t.footer.rights}
           </span>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link href={`/${l}/sobre`} className="transition hover:text-gray-300">
-              {t.nav.about}
-            </Link>
             {navItems.map(({ href, label }) => (
               <a key={href} href={`#${href}`} className="transition hover:text-gray-300">
                 {label}
