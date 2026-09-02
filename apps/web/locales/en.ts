@@ -12,6 +12,7 @@ export const en = {
     benefits: "Benefits",
     contact: "Contact",
     cta: "Get in touch",
+    about: "About me",
   },
   hero: {
     title: "Technical leadership for critical technology decisions",
@@ -92,5 +93,104 @@ export const en = {
   },
   imageAlt: {
     benefits: "Strategic technical decisions",
+  },
+  profile: {
+    meta: {
+      title: "Henrique | CTO & Software Architect",
+      description:
+        "Henrique's professional profile — software engineering, systems architecture, security, and AI-powered products.",
+    },
+    nav: {
+      back: "Noalab",
+    },
+    hero: {
+      kicker: "Professional profile",
+      // TODO: add last name if you want the full name displayed
+      name: "Henrique",
+      role: "CTO & Software Architect",
+      pitch:
+        "I lead critical technical decisions for scalable products — from architecture to security, integrations, and, more recently, AI agent systems.",
+      ctaProjects: "View projects",
+      ctaContact: "Get in touch",
+    },
+    bio: {
+      heading: "About me",
+      // TODO: replace with the real story of your career (companies, products, what drives you technically)
+      paragraphs: [
+        "[Write 2–3 sentences here about your background: where you worked, what kind of products/companies, and what drives you technically.]",
+        "Today, alongside running Noalab as a CTO-as-a-service practice, I build personal projects at the intersection of infrastructure and applied AI.",
+      ],
+    },
+    focus: {
+      heading: "Focus areas",
+      items: [
+        {
+          title: "Software Architecture",
+          description: "Scalable, resilient systems designed to grow without rewrites.",
+        },
+        {
+          title: "Infrastructure & Cloud",
+          description: "Kubernetes (EKS), Terraform, and running platforms in production.",
+        },
+        {
+          title: "Integrations & Backend",
+          description: "APIs, queues, and data pipelines with security and fault tolerance.",
+        },
+        {
+          title: "AI Agents & LLMs",
+          description: "Pluggable-LLM architectures, protocols like MCP, and intelligent automation.",
+        },
+      ],
+    },
+    projects: {
+      heading: "Projects",
+      description: "A selection of personal projects and initiatives in progress.",
+      items: [
+        {
+          name: "Mobile Agent OS",
+          description:
+            "Agent-first mobile operating system: Rust core, MCP-based integration, pluggable LLM, and a Go backend running on EKS.",
+          tags: ["Rust", "Go", "MCP", "LLM", "EKS"],
+          status: "In development",
+          link: "#",
+        },
+        {
+          name: "Noalab",
+          description:
+            "CTO-as-a-service practice — engineering, architecture, integrations, and security for growing products.",
+          tags: ["Consulting", "Architecture", "Security"],
+          status: "Active",
+          link: "/",
+        },
+        {
+          // TODO: swap for another real project from your background (or remove this card)
+          name: "[Next project]",
+          description: "[Add another relevant project from your background here.]",
+          tags: ["—"],
+          status: "Coming soon",
+          link: "#",
+        },
+      ],
+    },
+    skills: {
+      heading: "Stack & tools",
+      groups: [
+        { label: "Languages", items: ["TypeScript", "Rust", "Go"] },
+        { label: "Cloud & Infra", items: ["AWS", "EKS / Kubernetes", "Terraform"] },
+        { label: "AI & Agents", items: ["Pluggable LLM", "MCP", "Agent automation"] },
+        { label: "Product & Web", items: ["Next.js", "React", "Information security"] },
+      ],
+    },
+    contact: {
+      heading: "Let's talk",
+      description:
+        "Open to conversations about new projects, technical consulting, or collaboration opportunities.",
+      // TODO: replace "#" with your real links
+      links: [
+        { label: "LinkedIn", href: "#" },
+        { label: "GitHub", href: "#" },
+        { label: "Email", href: "mailto:noalabconsulting@protomail.com" },
+      ],
+    },
   },
 };

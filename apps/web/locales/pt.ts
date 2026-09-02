@@ -12,6 +12,7 @@ export const pt = {
     benefits: "Benefícios",
     contact: "Contato",
     cta: "Fale conosco",
+    about: "Sobre mim",
   },
   hero: {
     title: "Liderança técnica para decisões críticas em tecnologia",
@@ -92,5 +93,108 @@ export const pt = {
   },
   imageAlt: {
     benefits: "Decisões técnicas estratégicas",
+  },
+  profile: {
+    meta: {
+      title: "Henrique | CTO & Arquiteto de Software",
+      description:
+        "Perfil profissional de Henrique — engenharia de software, arquitetura de sistemas, segurança e produtos com IA.",
+    },
+    nav: {
+      back: "Noalab",
+    },
+    hero: {
+      kicker: "Perfil profissional",
+      // TODO: adicionar sobrenome se quiser exibir o nome completo
+      name: "Henrique",
+      role: "CTO & Arquiteto de Software",
+      pitch:
+        "Lidero decisões técnicas críticas em produtos escaláveis — da arquitetura à segurança, passando por integrações e, mais recentemente, sistemas de agentes com IA.",
+      ctaProjects: "Ver projetos",
+      ctaContact: "Fale comigo",
+    },
+    bio: {
+      heading: "Sobre mim",
+      // TODO: substituir pelo texto real da sua trajetória (empresas, produtos, o que te move tecnicamente)
+      paragraphs: [
+        "[Escreva aqui 2–3 frases sobre sua trajetória: onde atuou, que tipo de produto/empresas, e o que te move tecnicamente.]",
+        "Hoje, além de atuar como CTO as a Service através da Noalab, desenvolvo projetos próprios na fronteira entre infraestrutura e IA aplicada.",
+      ],
+    },
+    focus: {
+      heading: "Áreas de atuação",
+      items: [
+        {
+          title: "Arquitetura de Software",
+          description:
+            "Sistemas escaláveis e resilientes, projetados para crescer sem reescritas.",
+        },
+        {
+          title: "Infraestrutura & Cloud",
+          description:
+            "Kubernetes (EKS), Terraform e operação de plataformas em produção.",
+        },
+        {
+          title: "Integrações & Backend",
+          description:
+            "APIs, filas e pipelines de dados com segurança e tolerância a falhas.",
+        },
+        {
+          title: "Agentes de IA & LLM",
+          description:
+            "Arquiteturas com LLM plugável, protocolos como MCP e automação inteligente.",
+        },
+      ],
+    },
+    projects: {
+      heading: "Projetos",
+      description: "Uma seleção de projetos pessoais e iniciativas em desenvolvimento.",
+      items: [
+        {
+          name: "Mobile Agent OS",
+          description:
+            "Sistema operacional agent-first para mobile: núcleo em Rust, integração via MCP, LLM plugável e backend em Go rodando em EKS.",
+          tags: ["Rust", "Go", "MCP", "LLM", "EKS"],
+          status: "Em desenvolvimento",
+          link: "#",
+        },
+        {
+          name: "Noalab",
+          description:
+            "Consultoria de CTO as a Service — engenharia, arquitetura, integrações e segurança para produtos em crescimento.",
+          tags: ["Consultoria", "Arquitetura", "Segurança"],
+          status: "Ativo",
+          link: "/",
+        },
+        {
+          // TODO: troque por outro projeto real da sua trajetória (ou remova este card)
+          name: "[Próximo projeto]",
+          description: "[Adicione aqui outro projeto relevante da sua trajetória.]",
+          tags: ["—"],
+          status: "Em breve",
+          link: "#",
+        },
+      ],
+    },
+    skills: {
+      heading: "Stack & ferramentas",
+      groups: [
+        { label: "Linguagens", items: ["TypeScript", "Rust", "Go"] },
+        { label: "Cloud & Infra", items: ["AWS", "EKS / Kubernetes", "Terraform"] },
+        { label: "IA & Agentes", items: ["LLM plugável", "MCP", "Automação de agentes"] },
+        { label: "Produto & Web", items: ["Next.js", "React", "Segurança da informação"] },
+      ],
+    },
+    contact: {
+      heading: "Vamos conversar",
+      description:
+        "Aberto a conversas sobre novos projetos, consultoria técnica ou oportunidades de colaboração.",
+      // TODO: substituir "#" pelos seus links reais
+      links: [
+        { label: "LinkedIn", href: "#" },
+        { label: "GitHub", href: "#" },
+        { label: "E-mail", href: "mailto:noalabconsulting@protomail.com" },
+      ],
+    },
   },
 };
