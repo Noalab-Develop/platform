@@ -87,6 +87,18 @@ export const en = {
     emailSubject: "Technical Assessment - Noalab",
     emailBody:
       "Hello Noalab,\n\nI would like to request a technical assessment for my project.\n\nCompany:\nProduct type: (SaaS, API, Marketplace, etc)\nMain current challenges:\n\nLooking forward to hearing from you.\n\nThank you!",
+    modal: {
+      title: "Email template ready",
+      description:
+        "Copy the text below or open it directly in your email app.",
+      toLabel: "To",
+      subjectLabel: "Subject",
+      bodyLabel: "Message",
+      copyButton: "Copy email",
+      copiedButton: "Copied!",
+      openButton: "Open in email app",
+      closeButton: "Close",
+    },
   },
   footer: {
     rights: "All rights reserved.",

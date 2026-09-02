@@ -87,6 +87,18 @@ export const pt = {
     emailSubject: "Avaliação Técnica - Noalab",
     emailBody:
       "Olá Noalab,\n\nGostaria de solicitar uma avaliação técnica para meu projeto.\n\nEmpresa:\nTipo de produto: (SaaS, API, Marketplace, etc)\nPrincipais desafios atuais:\n\nFico no aguardo.\n\nObrigado!",
+    modal: {
+      title: "Modelo de e-mail pronto",
+      description:
+        "Copie o texto abaixo ou abra direto no seu aplicativo de e-mail.",
+      toLabel: "Para",
+      subjectLabel: "Assunto",
+      bodyLabel: "Mensagem",
+      copyButton: "Copiar e-mail",
+      copiedButton: "Copiado!",
+      openButton: "Abrir no app de e-mail",
+      closeButton: "Fechar",
+    },
   },
   footer: {
     rights: "Todos os direitos reservados.",

@@ -5,7 +5,10 @@ import { HeroBanner } from "@/components/HeroBanner";
 import { ServicesCarousel } from "@/components/ServiceCarousel";
 import { Reveal } from "@/components/Reveal";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ContactButton } from "@/components/ContactButton";
 import { getDictionary, locales, type Locale } from "@/locales";
+
+const CONTACT_EMAIL = "noalabconsulting@protomail.com";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -189,12 +192,13 @@ export default async function LocalePage({
             <p className="mt-4 text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
               {t.cta.description}
             </p>
-            <a
-              href={`mailto:noalabconsulting@protomail.com?subject=${encodeURIComponent(t.cta.emailSubject)}&body=${encodeURIComponent(t.cta.emailBody)}`}
-              className="mt-8 inline-block rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 hover:shadow-blue-500/30"
-            >
-              {t.cta.button}
-            </a>
+            <ContactButton
+              email={CONTACT_EMAIL}
+              subject={t.cta.emailSubject}
+              body={t.cta.emailBody}
+              buttonLabel={t.cta.button}
+              strings={t.cta.modal}
+            />
             <p className="mt-4 text-xs text-gray-500">{t.cta.trust}</p>
           </div>
         </Reveal>
@@ -215,11 +219,8 @@ export default async function LocalePage({
                 {label}
               </a>
             ))}
-            <a
-              href="mailto:noalabconsulting@protomail.com"
-              className="transition hover:text-gray-300"
-            >
-              noalabconsulting@protomail.com
+            <a href={`mailto:${CONTACT_EMAIL}`} className="transition hover:text-gray-300">
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>
