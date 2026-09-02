@@ -84,9 +84,9 @@ export const en = {
       "Start with a free technical assessment. We identify the main risks and opportunities in your product.",
     button: "Request a free assessment",
     trust: "Response within 24h · No commitment",
-    emailSubject: "Technical%20Assessment%20-%20Noalab",
+    emailSubject: "Technical Assessment - Noalab",
     emailBody:
-      "Hello%20Noalab,%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20for%20my%20project.%0A%0ACompany:%0AProduct%20type:%20(SaaS,%20API,%20Marketplace,%20etc)%0AMain%20current%20challenges:%0A%0ALooking%20forward%20to%20hearing%20from%20you.%0A%0AThank%20you!",
+      "Hello Noalab,\n\nI would like to request a technical assessment for my project.\n\nCompany:\nProduct type: (SaaS, API, Marketplace, etc)\nMain current challenges:\n\nLooking forward to hearing from you.\n\nThank you!",
   },
   footer: {
     rights: "All rights reserved.",

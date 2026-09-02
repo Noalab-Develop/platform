@@ -84,9 +84,9 @@ export const pt = {
       "Comece com uma avaliação técnica gratuita. Identificamos os principais riscos e oportunidades do seu produto.",
     button: "Solicitar avaliação gratuita",
     trust: "Resposta em até 24h · Sem compromisso",
-    emailSubject: "Avaliação%20Técnica%20-%20Noalab",
+    emailSubject: "Avaliação Técnica - Noalab",
     emailBody:
-      "Olá%20Noalab,%0A%0AGostaria%20de%20solicitar%20uma%20avaliação%20técnica%20para%20meu%20projeto.%0A%0AEmpresa:%0ATipo%20de%20produto:%20(SaaS,%20API,%20Marketplace,%20etc)%0APrincipais%20desafios%20atuais:%0A%0AFico%20no%20aguardo.%0A%0AObrigado!",
+      "Olá Noalab,\n\nGostaria de solicitar uma avaliação técnica para meu projeto.\n\nEmpresa:\nTipo de produto: (SaaS, API, Marketplace, etc)\nPrincipais desafios atuais:\n\nFico no aguardo.\n\nObrigado!",
   },
   footer: {
     rights: "Todos os direitos reservados.",

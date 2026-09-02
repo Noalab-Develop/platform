@@ -190,7 +190,7 @@ export default async function LocalePage({
               {t.cta.description}
             </p>
             <a
-              href={`mailto:noalabconsulting@protomail.com?subject=${t.cta.emailSubject}&body=${t.cta.emailBody}`}
+              href={`mailto:noalabconsulting@protomail.com?subject=${encodeURIComponent(t.cta.emailSubject)}&body=${encodeURIComponent(t.cta.emailBody)}`}
               className="mt-8 inline-block rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 hover:shadow-blue-500/30"
             >
               {t.cta.button}
